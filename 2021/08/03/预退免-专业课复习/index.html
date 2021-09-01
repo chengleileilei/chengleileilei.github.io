@@ -6,15 +6,15 @@
   
   <title>预退免 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="天不言自高，地不言自厚，以万物为参照，可洞观一己之不足">
+  <meta name="description" content="计算机组成原理计算机系统概论1. 分类：专用机、通用机 2. 发展：电子管计算机-&gt;晶体管计算机-&gt;中小规模集成电路计算机-&gt;大规模集成电路计算机-&gt;巨大规模集成电路计算机     * 性能指标：         1. 吞吐量：一台计算机再某一时间间隔内处理的信息量         2. 响应时间：从输入有效到系统产生响应的时间         3. 总线宽度：cpu内部运">
 <meta property="og:type" content="article">
 <meta property="og:title" content="预退免">
-<meta property="og:url" content="http://example.com/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D/index.html">
+<meta property="og:url" content="http://example.com/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="天不言自高，地不言自厚，以万物为参照，可洞观一己之不足">
+<meta property="og:description" content="计算机组成原理计算机系统概论1. 分类：专用机、通用机 2. 发展：电子管计算机-&gt;晶体管计算机-&gt;中小规模集成电路计算机-&gt;大规模集成电路计算机-&gt;巨大规模集成电路计算机     * 性能指标：         1. 吞吐量：一台计算机再某一时间间隔内处理的信息量         2. 响应时间：从输入有效到系统产生响应的时间         3. 总线宽度：cpu内部运">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-02T17:04:47.000Z">
-<meta property="article:modified_time" content="2021-08-02T17:04:47.225Z">
+<meta property="article:modified_time" content="2021-08-30T03:30:05.638Z">
 <meta property="article:author" content="TENNIS BOY">
 <meta name="twitter:card" content="summary">
   
@@ -77,9 +77,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-预退免" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-预退免-专业课复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D/" class="article-date">
+    <a href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/" class="article-date">
   <time class="dt-published" datetime="2021-08-02T17:04:47.000Z" itemprop="datePublished">2021-08-03</time>
 </a>
     
@@ -99,11 +99,45 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h2><h3 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h3><pre><code>1. 分类：专用机、通用机
+2. 发展：电子管计算机-&gt;晶体管计算机-&gt;中小规模集成电路计算机-&gt;大规模集成电路计算机-&gt;巨大规模集成电路计算机
+    * 性能指标：
+        1. 吞吐量：一台计算机再某一时间间隔内处理的信息量
+        2. 响应时间：从输入有效到系统产生响应的时间
+        3. 总线宽度：cpu内部运算器和存储器之间互连的内部总线二进制位数
+        4. 存储器带宽：单位时间从存储器读出二进制数信息量
+        5. 主频：cpu工作受主时钟控制，主频指主时钟的频率
+3.计算机硬件
+    * 运算器（ALU, arithmetic logical unit）：算术运算和逻辑运算
+    * 存储器：存储器有很多存储单元、存储单元的编号成为“地址”
+    * 控制器
+        1. 指令形式：指令码+地址码
+            * 指令数码化后，存储器的任何位置既可存数据也可存指令
+            * 冯诺依曼结构：指令和数据存放在同一个存储器（存储程序并按地址顺序执行）
+            * 哈佛结构：指令和数据分别存放在两个存储器（速度更快）
+        2. 控制器基本任务：
+            * 取指令-&gt;将操作码交给译码器分析-&gt;执行指令-&gt;继续取指令
+            * 取指周期：取指令的一段时间
+            * 执行周期：执行指令的时间
+        3. 指令流和数据流：
+            * 字：一个字至少由一个以上字节组成
+            * 字长：一个字的二进制位数
+            * 数据字、指令字
+            * 指令流：取值周期中从内存读出的信息流，流向控制器
+            * 数据流：执行周期中从内存读出的信息流，流向运算器
+4. 计算机软件
+</code></pre>
+<h3 id="第2章-运算方法和运算器"><a href="#第2章-运算方法和运算器" class="headerlink" title="第2章 运算方法和运算器"></a>第2章 运算方法和运算器</h3><pre><code>1. 原码、反码、补码：
+    * 引入补码的概念是因为ALU运算器在进行减法运算时比较困难，使用补码不需要进行减法运算
+    * 引入反码是因为原码直接求补码仍需要进行减法运算，通过反码计算补码则简单的多
+    * 正数的原码、反码和补码全部相同
+    * 负数的反码符号位不变，其余按位取反，补码为在反码的基础上加1
+</code></pre>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D/" data-id="ckruwjw180001mowrbvpnev0e" data-title="预退免" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/" data-id="ckt0vvibz000doowr7l1dhar5" data-title="预退免" class="article-share-link">分享</a>
       
       
       
@@ -175,7 +209,7 @@
           </li>
         
           <li>
-            <a href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D/">预退免</a>
+            <a href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/">预退免</a>
           </li>
         
           <li>
