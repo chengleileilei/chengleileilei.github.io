@@ -99,10 +99,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="深度学习的理解"><a href="#深度学习的理解" class="headerlink" title="深度学习的理解"></a>深度学习的理解</h3><pre><code>1. 本质原理：实现非线性映射；（神经网络的节点和参数非常多，通过梯度下降可以使模型适用于绝大多数问题）
-2. 不同任务之间的本质区别：通过设置不同的目标函数（LossFunction）、或输出的模式结构（比如GAN\TRANSFORMER）
-3. 网络结构：不同的网络的内部结构起到的就是提升模型性能的作用（提高准确度、提高训练速度、提高模型速度等）
-</code></pre>
+        <h3 id="深度学习的理解"><a href="#深度学习的理解" class="headerlink" title="深度学习的理解"></a>深度学习的理解</h3><ol>
+<li>本质原理：实现非线性映射；（神经网络的节点和参数非常多，通过梯度下降可以使模型适用于绝大多数问题）</li>
+<li>不同任务之间的本质区别：通过设置不同的目标函数（LossFunction）、或输出的模式结构（比如GAN\TRANSFORMER）</li>
+<li>网络结构：不同的网络的内部结构起到的就是提升模型性能的作用（提高准确度、提高训练速度、提高模型速度等）</li>
+</ol>
 <h3 id="实用新型专利"><a href="#实用新型专利" class="headerlink" title="实用新型专利"></a>实用新型专利</h3><ol>
 <li>解决问题：<ol>
 <li>基于交通大数据背景，通过交通视频系统获取需要交通疏导地点，提高出警速度；</li>
@@ -126,48 +127,79 @@
 </ol>
 </li>
 </ol>
-<h3 id="国创"><a href="#国创" class="headerlink" title="国创"></a>国创</h3><pre><code>1. 结构：
-    # 数字孪生部分：6自由度机械臂+web端的3d模型实现二者姿态的实时映射
-    # 控制部分：直接控制+视觉控制，视觉控制部分使用yolo算法+videopose3d获取人体姿态，将手臂数据作用在机械臂上
-    # 服务：深度学习服务器 + 边缘设备（机械臂）微型服务器 + Threejs的WEB前端模型
-2. 难点：
-    # 姿态控制时高，网络性能有限，需要网络结构优化（使用YOLOX）
-    # 精度低：视觉识别控制难以满足高精度作业，难以解决（需要使用高精度传感器）
-3. yolo：寻求速度与准确度的平衡！
-    # 网络输出：x,y,h,w,classes(confidence )
-    # 锚点：在锚点上选择较优的锚框再进行回归，直接回归h和w难度较大
-    # https://blog.csdn.net/leviopku/article/details/82660381
-    # yoloV1：
-        # 结构: 7个卷积层 + flatten + 全连接层 
-        # 损失函数：误差平方和计算（bounding box损失+confidence损失+class损失）
-        # 缺点：
-            1. 群体性目标检测差：一群鸟
-            2. 目标出现新尺寸时预测效果差
-    # yolov2：CVPR2017
-        # 每个卷积层添加BatchNormalization层，同时一处dropout层，减小过拟合，加快收敛
-        # 更高分辨率分类器：448*448
-        # 使用基于anchor的边界框预测，使用网络更加易于收敛
-        # 使用k-means获得priors（anchor）
-    # yolov3：做大做强，再创辉煌
-</code></pre>
-<h3 id="数据挖掘基本算法："><a href="#数据挖掘基本算法：" class="headerlink" title="数据挖掘基本算法："></a>数据挖掘基本算法：</h3><pre><code>1. 贝叶斯：根据先验概率计算属于某个类别的后验概率，最后取概率最大的分类
-2. 决策树：id3，4.5，CART
-3. K-MEANS：无监督、聚类迭代
-4. svm：核函数，通过升维达到使用线性方法解决非线性问题的能力
-</code></pre>
-<h3 id="transformer和bert模型-nlp任务"><a href="#transformer和bert模型-nlp任务" class="headerlink" title="transformer和bert模型-nlp任务"></a>transformer和bert模型-nlp任务</h3><pre><code>1. 基于mindspore框架实现，
-2. Transfomer：encoder和decoder，编码器+解码器，input-&gt;编码器编码-&gt;解码器解码输出-&gt;output；
-    # encoder： 输入部分（embedding编码）、注意力机制和前馈神经网络
-    # decoder：相对于encoder多了Masked Mutil-head-Attention，用于覆盖decoder还未见过的单词
-3. Bert结构：Transfomer中多个encoder结构堆叠在一起构成网络结构；
-4. 模型训练：
-    1. 预训练：无监督训练过程，包括掩码语言模型和句子关系模型（时间很长）
-    2. fine-tune：微调训练，根据下游任务进行模型微调训练（速度较快）
-5. Bert优缺点：准确率高，在各类nlp任务中都达到了极高的准确率，但是速度较慢，难以应用于线上任务
-</code></pre>
-<h3 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h3><pre><code>1. UserBaseCF：找到用户的相似性矩阵，推荐相似用户所购买的物品
-2. ItemBaseCF：找到物品的相似性矩阵，推荐相似物品
-</code></pre>
+<h3 id="国创"><a href="#国创" class="headerlink" title="国创"></a>国创</h3><ol>
+<li>结构：<ul>
+<li>数字孪生部分：6自由度机械臂+web端的3d模型实现二者姿态的实时映射</li>
+<li>控制部分：直接控制+视觉控制，视觉控制部分使用yolo算法+videopose3d获取人体姿态，将手臂数据作用在机械臂上</li>
+<li>服务：深度学习服务器 + 边缘设备（机械臂）微型服务器 + Threejs的WEB前端模型</li>
+</ul>
+</li>
+<li>难点：<ul>
+<li>姿态控制时高，网络性能有限，需要网络结构优化（使用YOLOX）</li>
+<li>精度低：视觉识别控制难以满足高精度作业，难以解决（需要使用高精度传感器）</li>
+</ul>
+</li>
+<li>yolo：寻求速度与准确度的平衡！<ul>
+<li>网络输出：x,y,h,w,classes(confidence )</li>
+<li>锚点：在锚点上选择较优的锚框再进行回归，直接回归h和w难度较大</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/leviopku/article/details/82660381">https://blog.csdn.net/leviopku/article/details/82660381</a></li>
+<li>yoloV1：<ul>
+<li>结构: 7个卷积层 + flatten + 全连接层 </li>
+<li>损失函数：误差平方和计算（bounding box损失+confidence损失+class损失）</li>
+<li>缺点：<ol>
+<li>群体性目标检测差：一群鸟</li>
+<li>目标出现新尺寸时预测效果差</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>yolov2：CVPR2017<ul>
+<li>每个卷积层添加BatchNormalization层，同时一处dropout层，减小过拟合，加快收敛</li>
+<li>更高分辨率分类器：448*448</li>
+<li>使用基于anchor的边界框预测，使用网络更加易于收敛</li>
+<li>使用k-means获得priors（anchor）</li>
+</ul>
+</li>
+<li>yolov3：做大做强，再创辉煌</li>
+</ul>
+</li>
+<li>HRNet：用于人体姿态识别<ul>
+<li>将不同分辨率的feature map进行并联</li>
+<li>在并联的基础上，添加不同feature map的交互（fusion），交互方法为：<ul>
+<li>相同分辨率feature map直接复制</li>
+<li>升分辨率使用bilnear upsample +1*1卷积讲channel数统一</li>
+<li>降分辨率使用strid为3*3的卷积（3x3卷积是为了通过学习的方式，降低信息的损耗）</li>
+<li>3个featuremap的融合是相加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据挖掘基本算法："><a href="#数据挖掘基本算法：" class="headerlink" title="数据挖掘基本算法："></a>数据挖掘基本算法：</h3><ol>
+<li>贝叶斯：根据先验概率计算属于某个类别的后验概率，最后取概率最大的分类</li>
+<li>决策树：id3，4.5，CART</li>
+<li>K-MEANS：无监督、聚类迭代</li>
+<li>svm：核函数，通过升维达到使用线性方法解决非线性问题的能力</li>
+</ol>
+<h3 id="transformer和bert模型-nlp任务"><a href="#transformer和bert模型-nlp任务" class="headerlink" title="transformer和bert模型-nlp任务"></a>transformer和bert模型-nlp任务</h3><ol>
+<li>基于mindspore框架实现，</li>
+<li>Transfomer：encoder和decoder，编码器+解码器，input-&gt;编码器编码-&gt;解码器解码输出-&gt;output；<ul>
+<li> encoder： 输入部分（embedding编码）、注意力机制和前馈神经网络</li>
+<li> decoder：相对于encoder多了Masked Mutil-head-Attention，用于覆盖decoder还未见过的单词</li>
+</ul>
+</li>
+<li>Bert结构：Transfomer中多个encoder结构堆叠在一起构成网络结构；</li>
+<li>模型训练：<ol>
+<li>预训练：无监督训练过程，包括掩码语言模型和句子关系模型（时间很长）</li>
+<li>fine-tune：微调训练，根据下游任务进行模型微调训练（速度较快）</li>
+</ol>
+</li>
+<li>Bert优缺点：准确率高，在各类nlp任务中都达到了极高的准确率，但是速度较慢，难以应用于线上任务</li>
+</ol>
+<h3 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h3><ol>
+<li>UserBaseCF：找到用户的相似性矩阵，推荐相似用户所购买的物品</li>
+<li>ItemBaseCF：找到物品的相似性矩阵，推荐相似物品</li>
+</ol>
 
       
     </div>
@@ -392,6 +424,11 @@
 <li>第三范式（3NF）：在二范式的基础上，不存在传递依赖（任何非主属性不依赖于其他非主属性）</li>
 </ul>
 </li>
+</ol>
+</li>
+<li>视图、游标<ol>
+<li>视图：视图是一种虚拟的表，对视图的修改不会影响基本表，更安全；</li>
+<li>游标：从结果集中提取一条记录的机制（利用游标可单独操作结果集中的每一行）</li>
 </ol>
 </li>
 </ol>
