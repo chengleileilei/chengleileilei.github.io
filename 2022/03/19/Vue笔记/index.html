@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>vscode使用JupyterNotebook | HAPPY SUMMER VACTION</title>
+  <title>Vue笔记 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="环境 Anaconda VSCode Jupyter  背景原本准备使用网页版的jupyterNotebook，在配置过程中遇到了不少问题（都是自找的），后来直接重装anaconda，配置config（设置默认路径和启动的浏览器）后就可以用了，但是发现浏览器启动jupyter服务对文件管理和命名不太方便，因此尝试使用vscode的jupyter扩展 正常情况正常安装anaconda会在base环境">
+  <meta name="description" content="Vue基础语法笔记 v-text v-html v-on v-show v-if v-bind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode使用JupyterNotebook">
-<meta property="og:url" content="http://example.com/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/index.html">
+<meta property="og:title" content="Vue笔记">
+<meta property="og:url" content="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="环境 Anaconda VSCode Jupyter  背景原本准备使用网页版的jupyterNotebook，在配置过程中遇到了不少问题（都是自找的），后来直接重装anaconda，配置config（设置默认路径和启动的浏览器）后就可以用了，但是发现浏览器启动jupyter服务对文件管理和命名不太方便，因此尝试使用vscode的jupyter扩展 正常情况正常安装anaconda会在base环境">
+<meta property="og:description" content="Vue基础语法笔记 v-text v-html v-on v-show v-if v-bind">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-23T07:55:19.000Z">
-<meta property="article:modified_time" content="2021-04-09T16:40:50.052Z">
+<meta property="article:published_time" content="2022-03-19T03:29:40.000Z">
+<meta property="article:modified_time" content="2022-03-19T03:35:59.131Z">
 <meta property="article:author" content="TENNIS BOY">
 <meta name="twitter:card" content="summary">
   
@@ -77,10 +77,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-vscode使用JupyterNotebook" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Vue笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/" class="article-date">
-  <time class="dt-published" datetime="2021-03-23T07:55:19.000Z" itemprop="datePublished">2021-03-23</time>
+    <a href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-03-19T03:29:40.000Z" itemprop="datePublished">2022-03-19</time>
 </a>
     
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      vscode使用JupyterNotebook
+      Vue笔记
     </h1>
   
 
@@ -99,20 +99,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
-<li>Anaconda</li>
-<li>VSCode</li>
-<li>Jupyter</li>
+        <h3 id="Vue基础语法笔记"><a href="#Vue基础语法笔记" class="headerlink" title="Vue基础语法笔记"></a>Vue基础语法笔记</h3><ul>
+<li>v-text</li>
+<li>v-html</li>
+<li>v-on</li>
+<li>v-show</li>
+<li>v-if</li>
+<li>v-bind</li>
+<li></li>
 </ul>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>原本准备使用网页版的jupyterNotebook，在配置过程中遇到了不少问题（都是自找的），后来直接重装anaconda，配置config（设置默认路径和启动的浏览器）后就可以用了，但是发现浏览器启动jupyter服务对文件管理和命名不太方便，因此尝试使用vscode的jupyter扩展</p>
-<h3 id="正常情况"><a href="#正常情况" class="headerlink" title="正常情况"></a>正常情况</h3><p>正常安装anaconda会在base环境中自带JupyterNotebook，在vscode中安装python插件（jupyter已经集成在python插件中），然后ctrl+shift+p选择创建jupyterNotebook就会自动连接base环境下的python.exe，即自动连接kernel，就可以编写notebook啦！</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我的vscode选择启动后一直提示：command failed……</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>因为win10环境变量TEMP和TMP 的路径存在中文（我的win10用户名为中文）导致的奇怪问题，将TEMP和TMP的路径改为：”C:/Windows/TEMP”，问题解决！</p>
-<h3 id="Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间"><a href="#Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间" class="headerlink" title="Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间"></a>Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间</h3>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/" data-id="ckt0vvibq0004oowr45ks6shq" data-title="vscode使用JupyterNotebook" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl0xasx7700004owr3qpzbyms" data-title="Vue笔记" class="article-share-link">分享</a>
       
       
       
@@ -122,19 +122,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/03/24/%E4%BD%9C%E6%96%87%E7%B4%A0%E6%9D%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          材料收集
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/14/%E6%8E%92%E5%BA%8F-%E5%BF%AB%E6%8E%92/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">排序-快排</div>
+      <div class="article-nav-title">北京交通大学-桑基韬老师面试</div>
     </a>
   
 </nav>
