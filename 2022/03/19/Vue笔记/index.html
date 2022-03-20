@@ -6,15 +6,15 @@
   
   <title>Vue笔记 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Vue基础语法笔记 v-text v-html v-on v-show v-if v-bind">
+  <meta name="description" content="Vue基础语法 v-text 设置文本; v-html 设置文本，可解析html; v-on 绑定事件，简写为@，例@click&#x3D;&quot;f&quot;  @mouseover&#x3D;&quot;over&quot;, 同时可在事件后面添加.修饰符对事件进行限制，例&lt;input type&#x3D;&quot;text&quot; @keyup.enter&#x3D;&quot;fe&quot;&gt;仅在键盘输">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue笔记">
 <meta property="og:url" content="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="Vue基础语法笔记 v-text v-html v-on v-show v-if v-bind">
+<meta property="og:description" content="Vue基础语法 v-text 设置文本; v-html 设置文本，可解析html; v-on 绑定事件，简写为@，例@click&#x3D;&quot;f&quot;  @mouseover&#x3D;&quot;over&quot;, 同时可在事件后面添加.修饰符对事件进行限制，例&lt;input type&#x3D;&quot;text&quot; @keyup.enter&#x3D;&quot;fe&quot;&gt;仅在键盘输">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-19T03:29:40.000Z">
-<meta property="article:modified_time" content="2022-03-19T03:35:59.131Z">
+<meta property="article:modified_time" content="2022-03-19T13:01:31.551Z">
 <meta property="article:author" content="TENNIS BOY">
 <meta name="twitter:card" content="summary">
   
@@ -99,14 +99,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="Vue基础语法笔记"><a href="#Vue基础语法笔记" class="headerlink" title="Vue基础语法笔记"></a>Vue基础语法笔记</h3><ul>
-<li>v-text</li>
-<li>v-html</li>
-<li>v-on</li>
-<li>v-show</li>
-<li>v-if</li>
-<li>v-bind</li>
-<li></li>
+        <h2 id="Vue基础语法"><a href="#Vue基础语法" class="headerlink" title="Vue基础语法"></a>Vue基础语法</h2><ul>
+<li>v-text 设置文本;</li>
+<li>v-html 设置文本，可解析html;</li>
+<li>v-on 绑定事件，简写为<code>@</code>，例<code>@click=&quot;f&quot;  @mouseover=&quot;over&quot;</code>, 同时可在事件后面添加.修饰符对事件进行限制，例<code>&lt;input type=&quot;text&quot; @keyup.enter=&quot;fe&quot;&gt;</code>仅在键盘输入enter键后进行触发fe函数；</li>
+<li>v-show 通过display属性控制元素是否显示;</li>
+<li>v-if 是否加载该元素dom树;</li>
+<li>v-bind 绑定属性，简写为<code>:</code>，例 <code>:src=&quot;imgSrc&quot;</code>;</li>
+<li>v-for 根据数据生成列表结构<code>&lt;li v-for=&quot;item in arr&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</code>;</li>
+<li>v-model 实现表单元素的双向绑定<code>&lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt; </code>;</li>
 </ul>
 
       
