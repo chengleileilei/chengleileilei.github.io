@@ -77,6 +77,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数学基础与笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-09-29T00:40:02.000Z" itemprop="datePublished">2022-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="概率论相关"><a href="#概率论相关" class="headerlink" title="概率论相关"></a>概率论相关</h2><ul>
+<li>支撑集：设f为拓扑空间X上的复值函数，{x∈X:f(x)≠0}的闭包称为f的支撑集，记为supp f。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" data-id="cl8mc9e860000sowr70rz5vxc" data-title="数学基础与笔记" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-毕业前日常" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/06/09/%E6%AF%95%E4%B8%9A%E5%89%8D%E6%97%A5%E5%B8%B8/" class="article-date">
@@ -152,6 +193,10 @@
 <h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><ul>
 <li>vue2 创建项目<code>vue init webpack  &quot;项目名称&quot;</code></li>
 </ul>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ul>
+<li>判断对象为空：<code>JSON.stringify(obj) == &#39;&#123;&#125;&#39;</code></li>
+</ul>
+<h3 id="i-i-d，iid或者IID"><a href="#i-i-d，iid或者IID" class="headerlink" title="i.i.d，iid或者IID"></a>i.i.d，iid或者IID</h3><p>独立同分布independent and identically distributed (i.i.d.)</p>
 
       
     </div>
@@ -667,46 +712,6 @@
 
 
   
-    <article id="post-c-winapi-多线程通信之事件机制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="article-date">
-  <time class="dt-published" datetime="2021-05-21T12:35:39.000Z" itemprop="datePublished">2021-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">c++ winapi 多线程通信之事件机制</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h3><p>本次作业实现了使用event事件机制进行线程间通信控制，控制两个子进程实现1到100000的累加，第一个子进程thread1负责偶数的累加，第二个子进程thread2负责基数的累加，最终得出计算结果为5000050000，经过res函数验证结果正确。</p>
-<h3 id="实现代码-c"><a href="#实现代码-c" class="headerlink" title="实现代码 c++"></a>实现代码 c++</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> maxn = <span class="number">100000</span>;</span><br><span class="line">CRITICAL_SECTION cs;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">thread1</span><span class="params">(PVOID pvParam)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//进入临界区后进行屏幕输出，防止两个线程同时输出导致输出混乱</span></span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Threat1 is running!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line">	<span class="comment">//打开event1事件</span></span><br><span class="line">	HANDLE hEvent = <span class="built_in">OpenEvent</span>(EVENT_ALL_ACCESS, TRUE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= maxn; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="comment">//等待event1为受信状态后向下执行</span></span><br><span class="line">		<span class="built_in">WaitForSingleObject</span>(hEvent, INFINITE);</span><br><span class="line">		<span class="comment">//cout &lt;&lt; &quot;hevent1 is true&quot; &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//设置event1 为未受信状态，防止其他线程操作</span></span><br><span class="line">		<span class="comment">//ResetEvent(hEvent);</span></span><br><span class="line">		sum += i;</span><br><span class="line">		<span class="comment">//操作结束后更改event1为受信状态，允许其他子线程访问</span></span><br><span class="line">		<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">thread2</span><span class="params">(PVOID pvParam)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Threat2 is running!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line">	HANDLE hEvent = <span class="built_in">OpenEvent</span>(EVENT_ALL_ACCESS, TRUE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxn; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">WaitForSingleObject</span>(hEvent, INFINITE);</span><br><span class="line">		<span class="comment">//ResetEvent(hEvent);</span></span><br><span class="line">		sum += i;</span><br><span class="line">		<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">res</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> s = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxn; i++) &#123;</span><br><span class="line">		s += i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">InitializeCriticalSection</span>(&amp;cs);</span><br><span class="line">	<span class="comment">//创建事件event1</span></span><br><span class="line">	HANDLE hEvent = <span class="built_in">CreateEvent</span>(<span class="literal">NULL</span>, FALSE, FALSE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="comment">//CreateEvent()参数分别表示安全属性、人工重置选项、初始受信状态、对象名，第二个False表示不使用人工重置即自动重置，在event被获取到后（WaitForSingleObject）自动变为未受信状态，不需要使用ResetEvent进行状态变更</span></span><br><span class="line">	<span class="comment">//text（）作用是实现对字符处理的透明化，不论是否使用 unicode 字符集，使用 TEXT 宏都可以使程序正常使用，</span></span><br><span class="line">	<span class="comment">//如果程序中有 unicode 宏的，那么就使用宽字符，否则使用单字节字符，保证程序的可移植性</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;event1 was created and fIinitialState is False \n&quot;</span>;</span><br><span class="line">	<span class="comment">//设置event1事件为受信状态</span></span><br><span class="line">	<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	<span class="comment">//创建子进程threat1和threat2</span></span><br><span class="line">	HANDLE hThreat1 = <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, thread1, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	HANDLE hThreat2 = <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, thread2, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;threat1 and threat2 were created!\n&quot;</span>;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//ResumeThread(hThreat1);</span></span><br><span class="line">	<span class="comment">//ResumeThread(hThreat1);</span></span><br><span class="line">	HANDLE hThreats[<span class="number">2</span>] = &#123; hThreat1,hThreat2 &#125;;</span><br><span class="line">	<span class="built_in">WaitForMultipleObjects</span>(<span class="number">2</span>, hThreats, TRUE, INFINITE);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Mutil threats result of the sum from 1 to &quot;</span>&lt;&lt;maxn&lt;&lt;<span class="string">&quot; is &quot;</span> &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Right result of the sum from 1 to &quot;</span> &lt;&lt; maxn &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; <span class="built_in">res</span>() &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" data-id="cl1d2aav600013cwr85bpe6w7" data-title="c++ winapi 多线程通信之事件机制" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -730,7 +735,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -741,6 +746,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
+          </li>
         
           <li>
             <a href="/2022/06/09/%E6%AF%95%E4%B8%9A%E5%89%8D%E6%97%A5%E5%B8%B8/">毕业前日常</a>
@@ -756,10 +765,6 @@
         
           <li>
             <a href="/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">mysql基本使用与注意事项</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/">Vue笔记</a>
           </li>
         
       </ul>
