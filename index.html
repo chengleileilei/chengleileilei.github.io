@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
 <meta property="og:description" content="天不言自高，地不言自厚，以万物为参照，可洞观一己之不足">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="TENNIS BOY">
+<meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="HAPPY SUMMER VACTION" type="application/atom+xml">
@@ -48,7 +48,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">wula！ Welcom！</a>
+          <a href="/" id="subtitle">Welcome！</a>
         </h2>
       
     </div>
@@ -77,6 +77,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-paperReading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/18/paperReading/" class="article-date">
+  <time class="dt-published" datetime="2022-10-17T18:12:30.336Z" itemprop="datePublished">2022-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="虚假用户检测工作相关论文"><a href="#虚假用户检测工作相关论文" class="headerlink" title="虚假用户检测工作相关论文"></a>虚假用户检测工作相关论文</h1><h2 id="GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection"><a href="#GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection" class="headerlink" title="GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection"></a>GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection</h2><p><strong>问题背景：</strong>推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈者，修正用户数据在模型中的权重）</p>
+<p><strong>前人相关工作：</strong></p>
+<ul>
+<li>提升推荐系统鲁棒性：在矩阵分解优化函数中添加m估计量</li>
+<li>欺诈者检测并删除欺诈者：过程容易出错，将正常用户识别为欺诈者</li>
+</ul>
+<p><strong>主要工作：</strong></p>
+<ul>
+<li>提出基于GCN的表示学习框架GraphRfi用于鲁棒推荐（评分预测任务）和欺诈者检测（分类任务），两个任务在训练中相互增强。<ul>
+<li>欺诈者概率用于评判用户数据对评分预测任务的重要性</li>
+<li>评分预测的误差用于欺诈者检测特征（从认知心理学的角度来看，一个正常用户的行为应该是一致和可预测的[46]。因此，如果一个用户的明显评分与一个精确的推荐模型所预测的评分有很大偏差，那么这个用户最有可能是一个骗子。）</li>
+</ul>
+</li>
+</ul>
+<p><strong>本文工作的优势：</strong></p>
+<ul>
+<li>将两个工作结合，充分利用用户可靠特征（用户正负评价分布、用户评价数量等评分统计信息）进行模型训练。</li>
+<li>端到端模型，欺诈者检测和评分任务相互耦合</li>
+</ul>
+<img src="/2022/10/18/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;">
+
+<h3 id="GCN-based-Rating-Prediction-Component"><a href="#GCN-based-Rating-Prediction-Component" class="headerlink" title="GCN-based Rating Prediction Component"></a><strong>GCN-based Rating Prediction Component</strong></h3><p>图结构：有向二分图</p>
+<p><strong>任务1：利用多源数据（user_rating、user_features）进行用户嵌入表示</strong></p>
+<p>$z_u$表示user embedding ，且$z_u^0=\pmb{x_u}$</p>
+<p>$z_v$表示item embedding，$z_v^0$随机初始化</p>
+<p>网络迭代过程是一个信息传递的过程（图卷积迭代）</p>
+<img src="/2022/10/18/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;">
+
+<p>$e_r$为评分r的embedding（评分就是1到5）</p>
+<p>$h_v$表示从item $v\in{N(u)}$节点传递过来的信息，$N(u)$表示用户u交互过的v的集合</p>
+<img src="/2022/10/18/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;">
+
+<ul>
+<li>更新$z_u$，通过注意力权重进行特征信息聚合</li>
+</ul>
+<p>$$<br>I(u)=N(u)\cup{u}<br>$$</p>
+<img src="/2022/10/18/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;">
+
+<img src="/2022/10/18/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;">
+
+<img src="/2022/10/18/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;">
+
+<img src="/2022/10/18/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;">
+
+<ul>
+<li>更新$z_v$</li>
+</ul>
+<img src="/2022/10/18/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;">
+
+<ul>
+<li>user-item二分图卷积算法流程：</li>
+</ul>
+<img src="/2022/10/18/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;">
+
+<p>通过不断卷积迭代，得到的节点表示综合了节点本身和所有连接到它们的节点信息</p>
+<p><strong>任务2：评分预测</strong></p>
+<ul>
+<li>将$z_u$和$z_v$拼接，接入一个线性层进行评分预测</li>
+</ul>
+<img src="/2022/10/18/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;">
+
+<h3 id="NRF-based-Fraudster-Detection-Component"><a href="#NRF-based-Fraudster-Detection-Component" class="headerlink" title="NRF-based Fraudster Detection Component"></a>NRF-based Fraudster Detection Component</h3><p>欺诈者检测模块是一个有监督分类器：随机森林不可微，因此使用神经随机森林，</p>
+<ul>
+<li>将数据评分的误差作为特征引入欺诈者检测模块</li>
+</ul>
+<img src="/2022/10/18/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;">
+
+<img src="/2022/10/18/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;">
+
+<img src="/2022/10/18/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;">
+
+<p>$z_u^*$是user的稠密表示，是神经随机树的输入</p>
+<p>每个决策节点对应一个权重向量w，和输入特征算内积过sigmoid得到走左子树的概率，右子树概率即为用1去减，根据概率大小（大于0.5走左子树）可以确定每个样本的决策路径，而叶子结点根据最终落进去的样本频数可以得到$y=1，0$的概率分布$\pi$, 通过样本连乘积得到一个batch的联合概率分布</p>
+<img src="/2022/10/18/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;">
+
+<h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>两个模块损失联合训练</p>
+<img src="/2022/10/18/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;">
+
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a><strong>数据集</strong></h4><ul>
+<li><p><strong>yelp数据集</strong>：使用前人标记的虚假评论区分虚假用户</p>
+</li>
+<li><p><strong>amazon数据集</strong>：选择收到评论点赞或反对总票数大于20的用户，如果点赞数比例大于0.7标记为正常用户，比例低于0.3标记为欺诈者</p>
+</li>
+</ul>
+<h4 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h4><ul>
+<li><strong>评分任务：</strong>mse、mae，同时为测试集注入不同比例的欺诈者，测试模型的性能波动</li>
+</ul>
+<p><img src="/2022/10/18/paperReading/image-20221018020904856.png" alt="image-20221018020904856"></p>
+<ul>
+<li><strong>虚假用户检测：</strong>查准率、查全率、f1</li>
+</ul>
+<p><img src="/2022/10/18/paperReading/image-20221018020958467.png" alt="image-20221018020958467"></p>
+<ul>
+<li><strong>鲁棒性：</strong>利用欺诈者数据模拟不同攻击模式进行模型测试</li>
+</ul>
+<p><img src="/2022/10/18/paperReading/image-20221018021110587.png" alt="image-20221018021110587"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/18/paperReading/" data-id="cl9d3gyg200077kwr760lfoct" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-virtual-box-挂载" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" class="article-date">
@@ -104,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" data-id="cl91bdkan0008oswr9453grc9" data-title="virtual-box 挂载以及持久生效" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" data-id="cl9d3gyg300097kwr6324h7a2" data-title="virtual-box 挂载以及持久生效" class="article-share-link">分享</a>
       
       
       
@@ -146,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" data-id="cl91bdkas000foswrcciherd3" data-title="数学基础与笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" data-id="cl9d3gyg7000g7kwr644pdec8" data-title="数学基础与笔记" class="article-share-link">分享</a>
       
       
       
@@ -189,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/09/tennis/" data-id="cl91bdkam0007oswr75bm3n6l" data-title="毕业前日常" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/06/09/tennis/" data-id="cl9d3gyg300087kwr84ushncg" data-title="毕业前日常" class="article-share-link">分享</a>
       
       
       
@@ -241,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/" data-id="cl91bdkaq000doswrfe4pba0y" data-title="常忘记命令" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/" data-id="cl9d3gyg7000e7kwrdul252oo" data-title="常忘记命令" class="article-share-link">分享</a>
       
       
       
@@ -285,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/15/image-atrical/" data-id="cl91bdkaj0002oswr0hbk6tdp" data-title="HEXO 插入图片" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/15/image-atrical/" data-id="cl9d3gyfz00037kwr5jlh5x67" data-title="HEXO 插入图片" class="article-share-link">分享</a>
       
       
       
@@ -331,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl91bdkal0005oswrb3nq4krp" data-title="mysql基本使用与注意事项" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl9d3gyg100067kwrd1tdhrdx" data-title="mysql基本使用与注意事项" class="article-share-link">分享</a>
       
       
       
@@ -383,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl91bdkai0001oswrhvfaffvp" data-title="Vue笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9d3gyfu00007kwr7wep6ei2" data-title="Vue笔记" class="article-share-link">分享</a>
       
       
       
@@ -430,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/" data-id="cl91bdkao000aoswr1ljb6e1v" data-title="北京交通大学-桑基韬老师面试" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/" data-id="cl9d3gyg5000b7kwr77if4abt" data-title="北京交通大学-桑基韬老师面试" class="article-share-link">分享</a>
       
       
       
@@ -569,60 +693,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" data-id="cl91bdkau000ioswr9o6ub4is" data-title="预推免面试准备" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-夏令营" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="article-date">
-  <time class="dt-published" datetime="2021-08-02T17:05:06.000Z" itemprop="datePublished">2021-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/">夏令营</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>由于前5学期成绩处于保研边缘，大三下学期把主要精力放在课程考试上了，在考试基本全结束后投递了一些院校（此时大部分院校已经截至了），投了大概7、8所，最终只有西电入营了，最后挂了。</p>
-<h3 id="西电"><a href="#西电" class="headerlink" title="西电"></a>西电</h3><ol>
-<li>自我介绍两分钟<br>光准备英文自我介绍了，中文的却一下子懵了，说的比较乱</li>
-<li>问了简历上gpu多线程的课程设计，问怎么体现多线程的性能优势的，多大的数据量（其实就是win32的多线程程序设计，没用到大规模数据，回答的很烂）</li>
-<li>问了决策树的原理，有哪几种决策树<br>原理回答感觉还可以（但是逻辑不够清晰），后面决策树我就记得id3和c4.5，回答了个信息增益和信息增益率，答的很不完全</li>
-<li>数学建模时间序列模型是什么模型，我真不知道，我以为时间序列模型就是一种模型，当时就用spss处理的，原理一点不知道<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4>当时抱着随便试试的心态，也是第一次面试不知道准备点什么。面试结束竟然自我感觉良好，现在复盘才发现回答的太烂了。</li>
-</ol>
-<h3 id="改进点"><a href="#改进点" class="headerlink" title="改进点"></a>改进点</h3><ol>
-<li>简历优化：主要优化项目经历，加点干货</li>
-<li>简历复盘：对简历上的内容充分复习，基本都会问</li>
-<li>搜集目标院校信息，尽快联系老师！（不知道8月份联系老师是否合适）</li>
-<li>英语准备：自我介绍、专业词汇、常见英文问题（知乎有收藏）、简历问题英文准备（有时间的话）</li>
-<li>专业课复习</li>
-<li>算法：5 per day </li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/" data-id="cl91bdkap000coswr5a8i8emo" data-title="夏令营" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" data-id="cl9d3gyg8000h7kwr7hokbafi" data-title="预推免面试准备" class="article-share-link">分享</a>
       
       
       
@@ -670,6 +741,10 @@
       <ul>
         
           <li>
+            <a href="/2022/10/18/paperReading/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/">virtual-box 挂载以及持久生效</a>
           </li>
         
@@ -685,10 +760,6 @@
             <a href="/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/">常忘记命令</a>
           </li>
         
-          <li>
-            <a href="/2022/04/15/image-atrical/">HEXO 插入图片</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -702,7 +773,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2022 TENNIS BOY<br>
+      &copy; 2022 Cheng<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
