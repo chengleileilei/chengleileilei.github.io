@@ -34,7 +34,11 @@
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -77,6 +81,196 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-测验1解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2022-10-28T11:54:45.128Z" itemprop="datePublished">2022-10-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p><strong>线性变换：</strong></p>
+<ol>
+<li>数值意义上，变换即函数，线性变换就是一阶导数为常数的函数</li>
+<li>几何意义上，线性变换表示的是直线的特性，符合两个性质：变换前后零点不变，变换前后直线还是直线。将空间中的向量围绕零点进行旋转伸缩，但不能将其弯曲，否则则是非线性变化。</li>
+</ol>
+</li>
+<li><p>欠拟合：欠拟合是指模型拟合程度不高，数据距离拟合曲线较远，或指模型没有很好地捕捉到数据特征，不能够很好地拟合数据。</p>
+<ol>
+<li>增加新特征，可以考虑加入进特征组合、高次特征，来增大假设空间；</li>
+<li>添加多项式特征，这个在机器学习算法里面用的很普遍，例如将线性模型通过添加二次项或者三次项使模型泛化能力更强；</li>
+<li>减少正则化参数，正则化的目的是用来防止过拟合的，但是模型出现了欠拟合，则需要减少正则化参数；</li>
+<li>使用非线性模型，比如核SVM 、决策树、深度学习等模型；</li>
+<li>调整模型的容量(capacity)，通俗地，模型的容量是指其拟合各种函数的能力；</li>
+<li>容量低的模型可能很难拟合训练集；使用集成学习方法，如Bagging ,将多个弱学习器Bagging。</li>
+</ol>
+</li>
+<li><p>AUC <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48168711">https://zhuanlan.zhihu.com/p/48168711</a></p>
+<ol>
+<li>ROC曲线：<ol>
+<li>横轴：假正例率，FPR = FP / （TN + FP）, 也就是在所有负例当中， 错误的判断为正例所占的比例。</li>
+<li>纵轴：真正利率， TPR = TP / (TP + FN),也就是在所有正例当中，正确判断为正例的占的比例，实际就是精度；</li>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/v2-be4373e0cff4c73205ca224b4d4a1860_720w.webp" alt="img"></li>
+</ol>
+</li>
+<li>AUC：roc曲线下的面积<ol>
+<li>Fawcett, 2006 ：所有样本按 Score 值排序后，在样本集中随机抽取 1 个正类样本和 1 个负类样本，<strong>AUC 值指出了所抽取的正类样本能排在所抽取的负类样本之前的概率。</strong></li>
+</ol>
+</li>
+<li>代价曲线：<ol>
+<li>ROC 乃至最后计算 AUC 的整个过程中，假 1（FP）和假 0（FN）皆被同等对待（<strong>均等代价</strong>），但实际情况下FP 和 FN 的后果是不一样的（<strong>非均等代价</strong>）</li>
+<li>目的：对于一个模型，根据p不同，找到使得代价总期望最小的模型的阈值</li>
+<li>明确参数 : p=m+/m</li>
+<li>横轴：归一化的正概率代价期望<ol>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/webp.webp" alt="img"></li>
+</ol>
+</li>
+<li>纵轴：归一化的总代价期望<ol>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/webp-16669420663537.webp" alt="img"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>方差偏差</strong></p>
+<ul>
+<li>方差：<strong>不同的训练数据集训练出的模型</strong>输出值之间的差异。（预测值离散程度）。<strong>刻画的是数据扰动对模型的影响。</strong></li>
+<li>偏差：用所有可能的训练数据集训练出的所有模型的输出的平均值与真实模型的输出值之间的差异。<strong>刻画了学习算法本身的拟合能力。</strong><ul>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160350864.png" alt="image-20221028160350864"></li>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160341932.png" alt="image-20221028160341932"></li>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160404859.png" alt="image-20221028160404859"></li>
+</ul>
+</li>
+<li><strong>噪声(Noise)</strong>是当前学习任务上任何学习算法所能达到的期望泛化误差的下界即表示了任务本身的难度(任何算法误差都不可能低于该噪声值)。<ul>
+<li>​    泛化误差可以分解为偏差、方差和噪声之和。</li>
+</ul>
+</li>
+<li><strong>偏差-方差窘境</strong><ul>
+<li>一般来说，偏差与方差是有冲突的，称为<strong>偏差-方差窘境</strong>。</li>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDM2NzMwNw==,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></li>
+<li>在训练不足时，学习器拟合能力不强，<strong>训练数据的扰动不足以使学习器的拟合能力产生显著变化，此时偏差主导泛化错误率</strong>；</li>
+<li>训练充足后，<strong>学习器的拟合能力非常强，训练数据的轻微扰动都会导致学习器的显著变化，方差主导泛化误差。</strong>（若训练数据自身非全局特性被学到则会发生过拟合。）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>对数几率回归用于二分类</p>
+</li>
+<li><p>对于非凸函数（深层神经网络），梯度优化找到的是局部极小值。（好在实践应用中，通过梯度下降法找到的局部最小值，大部分情况下已经可以满足我们的应用需求，并且有时候为了得到更好的结果，用随机初始化训练多次得到多个局部最小值进行比较得到更优的结果。）</p>
+</li>
+<li><p>参考题目6，深度为4的决策树的拟合能力大于深度为2的决策树(训练充足)，因此<code>var(T1) &lt; var(T2)</code>，<code>bias(T1)&gt;bias(T2)</code></p>
+<ul>
+<li>拟合能力强，方差大，</li>
+<li>拟合能力弱，偏差大</li>
+</ul>
+</li>
+<li><p>决策树确保每个叶子节点为纯类会增加过拟合</p>
+</li>
+<li><p>训练集好，验证集差，考虑出现过拟合</p>
+<ul>
+<li>决策树高度过高才会出现过拟合</li>
+<li>随机森林树的数量过多会抵消随机性的引入，最后的模型会是一个过拟合的模型，其泛化性能也会降低。</li>
+</ul>
+</li>
+<li><p>adaboost</p>
+<ul>
+<li><p>先通过对N个训练样本的学习得到第一个弱分类器；</p>
+</li>
+<li><p>将分错的样本和其他的新数据一起构成一个新的N个的训练样本，通过对这个样本的学习得到第二个弱分类器 ；</p>
+</li>
+<li><p>将1和2都分错了的样本加上其他的新样本构成另一个新的N个的训练样本，通过对这个样本的学习得到第三个弱分类器；</p>
+</li>
+<li><p>最终经过提升的强分类器。即某个数据被分为哪一类要由各分类器权值决定。</p>
+</li>
+</ul>
+</li>
+<li><p>单层感知机无法解决异或问题</p>
+</li>
+<li>误差逆传播以目标的梯度<strong>负方向</strong>对参数进行调整</li>
+<li>python程序抛出异常一定终止运行</li>
+<li>python 中<code>assert</code>（断言）用于判断一个表达式，在表达式条件为 false 的时候触发异常。</li>
+<li>使用验证集调整超参数</li>
+<li>会存在无用特征</li>
+<li>正则化<ol>
+<li>L1正则化，又叫Lasso Regression，L1是向量各元素的绝对值之和<ol>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/v2-8438d4ae3f5c6b2c44cb9fad48e0bee1_1440w.png" alt="img"></li>
+</ol>
+</li>
+<li>L2正则化，又叫Ridge Regression，L2是向量各元素的平方和，然后再求平方根<ol>
+<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/v2-77cc38baccab285eb7d24417e8f2707e_1440w.png" alt="img"></li>
+</ol>
+</li>
+<li>L1正则化可以产生稀疏权值矩阵，即产生一个稀疏模型，用于特征选择。</li>
+<li>L2正则化可以产生参数值较小的模型，能适应不同的数据集，一定程度上防止过拟合，抗扰动能力强。</li>
+<li>L2让所有特征的系数都缩小，但是不会减为0，它会使优化求解稳定快速。所以L2适用于特征之间没有关联的情况。</li>
+</ol>
+</li>
+</ol>
+<p>​    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" data-id="cl9sft8v70001lowr5ngabo21" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Docker基础与使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-10-27T09:02:53.000Z" itemprop="datePublished">2022-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/">Docker基础与使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p><code>docker image ls</code> 查看docker已安装镜像</p>
+<p><code>docker ps -a</code>查看当前运行docker镜像（不带-a表示查看所有docker镜像）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" data-id="cl9sft8v20000lowr4chf0jq7" data-title="Docker基础与使用" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-paperReading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/18/paperReading/" class="article-date">
@@ -90,7 +284,9 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="虚假用户检测工作相关论文"><a href="#虚假用户检测工作相关论文" class="headerlink" title="虚假用户检测工作相关论文"></a>虚假用户检测工作相关论文</h1><h2 id="GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection"><a href="#GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection" class="headerlink" title="GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection"></a>GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection</h2><p><strong>问题背景：</strong>推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈者，修正用户数据在模型中的权重）</p>
-<p><strong>前人相关工作：</strong></p>
+<p>test:</p>
+<script type="math/tex; mode=display">
+f(x)=sin(x)/\sigma</script><p><strong>前人相关工作：</strong></p>
 <ul>
 <li>提升推荐系统鲁棒性：在矩阵分解优化函数中添加m估计量</li>
 <li>欺诈者检测并删除欺诈者：过程容易出错，将正常用户识别为欺诈者</li>
@@ -108,65 +304,50 @@
 <li>将两个工作结合，充分利用用户可靠特征（用户正负评价分布、用户评价数量等评分统计信息）进行模型训练。</li>
 <li>端到端模型，欺诈者检测和评分任务相互耦合</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;"></p>
 <h3 id="GCN-based-Rating-Prediction-Component"><a href="#GCN-based-Rating-Prediction-Component" class="headerlink" title="GCN-based Rating Prediction Component"></a><strong>GCN-based Rating Prediction Component</strong></h3><p>图结构：有向二分图</p>
 <p><strong>任务1：利用多源数据（user_rating、user_features）进行用户嵌入表示</strong></p>
 <p>$z_u$表示user embedding ，且$z_u^0=\pmb{x_u}$</p>
 <p>$z_v$表示item embedding，$z_v^0$随机初始化</p>
 <p>网络迭代过程是一个信息传递的过程（图卷积迭代）</p>
-<img src="/2022/10/18/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;"></p>
 <p>$e_r$为评分r的embedding（评分就是1到5）</p>
 <p>$h_v$表示从item $v\in{N(u)}$节点传递过来的信息，$N(u)$表示用户u交互过的v的集合</p>
-<img src="/2022/10/18/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;"></p>
 <ul>
 <li>更新$z_u$，通过注意力权重进行特征信息聚合</li>
 </ul>
-<p>$$<br>I(u)=N(u)\cup{u}<br>$$</p>
-<img src="/2022/10/18/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;">
-
+<script type="math/tex; mode=display">
+I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;"></p>
 <ul>
 <li>更新$z_v$</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;"></p>
 <ul>
 <li>user-item二分图卷积算法流程：</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;"></p>
 <p>通过不断卷积迭代，得到的节点表示综合了节点本身和所有连接到它们的节点信息</p>
 <p><strong>任务2：评分预测</strong></p>
 <ul>
 <li>将$z_u$和$z_v$拼接，接入一个线性层进行评分预测</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;"></p>
 <h3 id="NRF-based-Fraudster-Detection-Component"><a href="#NRF-based-Fraudster-Detection-Component" class="headerlink" title="NRF-based Fraudster Detection Component"></a>NRF-based Fraudster Detection Component</h3><p>欺诈者检测模块是一个有监督分类器：随机森林不可微，因此使用神经随机森林，</p>
 <ul>
 <li>将数据评分的误差作为特征引入欺诈者检测模块</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;"></p>
 <p>$z_u^*$是user的稠密表示，是神经随机树的输入</p>
 <p>每个决策节点对应一个权重向量w，和输入特征算内积过sigmoid得到走左子树的概率，右子树概率即为用1去减，根据概率大小（大于0.5走左子树）可以确定每个样本的决策路径，而叶子结点根据最终落进去的样本频数可以得到$y=1，0$的概率分布$\pi$, 通过样本连乘积得到一个batch的联合概率分布</p>
-<img src="/2022/10/18/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;"></p>
 <h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>两个模块损失联合训练</p>
-<img src="/2022/10/18/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;"></p>
 <h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a><strong>数据集</strong></h4><ul>
 <li><p><strong>yelp数据集</strong>：使用前人标记的虚假评论区分虚假用户</p>
 </li>
@@ -189,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/18/paperReading/" data-id="cl9d3gyg200077kwr760lfoct" data-title="" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/10/18/paperReading/" data-id="cl9kqweg80007s4wre6fndjsd" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -228,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" data-id="cl9d3gyg300097kwr6324h7a2" data-title="virtual-box 挂载以及持久生效" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" data-id="cl9kqweg90009s4wr8ylpbdbk" data-title="virtual-box 挂载以及持久生效" class="article-share-link">分享</a>
       
       
       
@@ -270,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" data-id="cl9d3gyg7000g7kwr644pdec8" data-title="数学基础与笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/" data-id="cl9kqwegf000gs4wrcl36eon6" data-title="数学基础与笔记" class="article-share-link">分享</a>
       
       
       
@@ -308,12 +489,12 @@
 <li>上午刚做了核酸，中午问我去不去做核酸，差点又跑去做一次；</li>
 <li>kfc取餐路上，突然说要是kfc在二食堂就好了，一食堂好远（其实kfc就在二食堂）；</li>
 </ul>
-<h3 id="五一矿大网球公开赛奖品"><a href="#五一矿大网球公开赛奖品" class="headerlink" title="五一矿大网球公开赛奖品"></a>五一矿大网球公开赛奖品</h3><p><img src="/2022/06/09/tennis/.%5Ctennis%5C1.JPG" alt=" 来个合照 "><br><img src="/2022/06/09/tennis/.%5Ctennis%5CSlazenger1.JPG" alt=" Slazenger "></p>
+<h3 id="五一矿大网球公开赛奖品"><a href="#五一矿大网球公开赛奖品" class="headerlink" title="五一矿大网球公开赛奖品"></a>五一矿大网球公开赛奖品</h3><p><img src="/2022/06/09/tennis/tennis\1.JPG" alt=" 来个合照 "><br><img src="/2022/06/09/tennis/tennis\Slazenger1.JPG" alt=" Slazenger "></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/09/tennis/" data-id="cl9d3gyg300087kwr84ushncg" data-title="毕业前日常" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/06/09/tennis/" data-id="cl9kqweg80008s4wr5d8k12e7" data-title="毕业前日常" class="article-share-link">分享</a>
       
       
       
@@ -365,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/" data-id="cl9d3gyg7000e7kwrdul252oo" data-title="常忘记命令" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/" data-id="cl9kqwegc000es4wrejcq5r0o" data-title="常忘记命令" class="article-share-link">分享</a>
       
       
       
@@ -400,16 +581,15 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="/2022/04/15/image-atrical/BeiJing.jpg" alt="2008 BeiJing "><br><img src="/2022/04/15/image-atrical/CumtCs.jpg" alt=" 2022 CUMT "></p>
-<h1 id="配置流程（参考自https-www-jianshu-com-p-f72aaad7b852）"><a href="#配置流程（参考自https-www-jianshu-com-p-f72aaad7b852）" class="headerlink" title="配置流程（参考自https://www.jianshu.com/p/f72aaad7b852）"></a>配置流程（参考自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852%EF%BC%89">https://www.jianshu.com/p/f72aaad7b852）</a></h1><h2 id="第一步：安装插件，在hexo根目录打开Git-Bash-执行"><a href="#第一步：安装插件，在hexo根目录打开Git-Bash-执行" class="headerlink" title="第一步：安装插件，在hexo根目录打开Git Bash,执行"></a>第一步：安装插件，在hexo根目录打开Git Bash,执行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<h1 id="配置流程（参考自https-www-jianshu-com-p-f72aaad7b852）"><a href="#配置流程（参考自https-www-jianshu-com-p-f72aaad7b852）" class="headerlink" title="配置流程（参考自https://www.jianshu.com/p/f72aaad7b852）"></a>配置流程（参考自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852）">https://www.jianshu.com/p/f72aaad7b852）</a></h1><h2 id="第一步：安装插件，在hexo根目录打开Git-Bash-执行"><a href="#第一步：安装插件，在hexo根目录打开Git-Bash-执行" class="headerlink" title="第一步：安装插件，在hexo根目录打开Git Bash,执行"></a>第一步：安装插件，在hexo根目录打开Git Bash,执行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 <h2 id="第二步：打开hexo的配置文件-config-yml"><a href="#第二步：打开hexo的配置文件-config-yml" class="headerlink" title="第二步：打开hexo的配置文件_config.yml"></a>第二步：打开hexo的配置文件_config.yml</h2><p>找到 post_asset_folder，把这个选项从false改成true</p>
-<h2 id="第三步：打开-node-modules-hexo-asset-image-index-js"><a href="#第三步：打开-node-modules-hexo-asset-image-index-js" class="headerlink" title="第三步：打开/node_modules/hexo-asset-image/index.js"></a>第三步：打开<code>/node_modules/hexo-asset-image/index.js</code></h2><p>将内容更换为下面的代码,（在此感谢Ericam_ 大神：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xjm850552586%EF%BC%89">https://blog.csdn.net/xjm850552586）</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">&#x27;cheerio&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">str, m, i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_post_render&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">        <span class="keyword">var</span> link = data.permalink;</span><br><span class="line">    <span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span></span><br><span class="line">    <span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">&#x27;/&#x27;</span>) + <span class="number">1</span>;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> toprocess = [<span class="string">&#x27;excerpt&#x27;</span>, <span class="string">&#x27;more&#x27;</span>, <span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">        xmlMode: <span class="literal">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">        decodeEntities: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(<span class="string">&#x27;img&#x27;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>))&#123;</span><br><span class="line">            <span class="comment">// For windows style path, we replace &#x27;\&#x27; to &#x27;/&#x27;.</span></span><br><span class="line">            <span class="keyword">var</span> src = $(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span>(!<span class="regexp">/http[s]*.*|\/\/.*/</span>.test(src) &amp;&amp;</span><br><span class="line">               !<span class="regexp">/^\s*\//</span>.test(src)) &#123;</span><br><span class="line">              <span class="comment">// For &quot;about&quot; page, the first part of &quot;src&quot; can&#x27;t be removed.</span></span><br><span class="line">              <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">              <span class="keyword">var</span> linkArray = link.split(<span class="string">&#x27;/&#x27;</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">var</span> srcArray = src.split(<span class="string">&#x27;/&#x27;</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">&#x27;&#x27;</span> &amp;&amp; elem != <span class="string">&#x27;.&#x27;</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(<span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">              $(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>, config.root + link + src);</span><br><span class="line">              <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">&quot;update link as:--&gt;&quot;</span>+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">&quot;no src attr, skipped...&quot;</span>);</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info($(<span class="built_in">this</span>));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="第四步：复制图片到对应文件夹"><a href="#第四步：复制图片到对应文件夹" class="headerlink" title="第四步：复制图片到对应文件夹"></a>第四步：复制图片到对应文件夹</h2><p><code>hexo new image-atrical</code>之后在source/_posts生成image-atrical.md文件和image-atrical文件夹，把要插入的图片复制到image-atrical文件夹内，然后在md中即可正常引入图片并显示了！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![This is my photo](.&#x2F;image-atrical&#x2F;CumtCs.jpg)</span><br></pre></td></tr></table></figure>
+<h2 id="第三步：打开-node-modules-hexo-asset-image-index-js"><a href="#第三步：打开-node-modules-hexo-asset-image-index-js" class="headerlink" title="第三步：打开/node_modules/hexo-asset-image/index.js"></a>第三步：打开<code>/node_modules/hexo-asset-image/index.js</code></h2><p>将内容更换为下面的代码,（在此感谢Ericam_ 大神：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xjm850552586）">https://blog.csdn.net/xjm850552586）</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">&#x27;cheerio&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">str, m, i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_post_render&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">        <span class="keyword">var</span> link = data.permalink;</span><br><span class="line">    <span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span></span><br><span class="line">    <span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">&#x27;/&#x27;</span>) + <span class="number">1</span>;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> toprocess = [<span class="string">&#x27;excerpt&#x27;</span>, <span class="string">&#x27;more&#x27;</span>, <span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">        xmlMode: <span class="literal">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">        decodeEntities: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(<span class="string">&#x27;img&#x27;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>))&#123;</span><br><span class="line">            <span class="comment">// For windows style path, we replace &#x27;\&#x27; to &#x27;/&#x27;.</span></span><br><span class="line">            <span class="keyword">var</span> src = $(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span>(!<span class="regexp">/http[s]*.*|\/\/.*/</span>.test(src) &amp;&amp;</span><br><span class="line">               !<span class="regexp">/^\s*\//</span>.test(src)) &#123;</span><br><span class="line">              <span class="comment">// For &quot;about&quot; page, the first part of &quot;src&quot; can&#x27;t be removed.</span></span><br><span class="line">              <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">              <span class="keyword">var</span> linkArray = link.split(<span class="string">&#x27;/&#x27;</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">var</span> srcArray = src.split(<span class="string">&#x27;/&#x27;</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">&#x27;&#x27;</span> &amp;&amp; elem != <span class="string">&#x27;.&#x27;</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(<span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">              $(<span class="built_in">this</span>).attr(<span class="string">&#x27;src&#x27;</span>, config.root + link + src);</span><br><span class="line">              <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">&quot;update link as:--&gt;&quot;</span>+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">&quot;no src attr, skipped...&quot;</span>);</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info($(<span class="built_in">this</span>));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="第四步：复制图片到对应文件夹"><a href="#第四步：复制图片到对应文件夹" class="headerlink" title="第四步：复制图片到对应文件夹"></a>第四步：复制图片到对应文件夹</h2><p><code>hexo new image-atrical</code>之后在source/_posts生成image-atrical.md文件和image-atrical文件夹，把要插入的图片复制到image-atrical文件夹内，然后在md中即可正常引入图片并显示了！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![This is my photo](.&#x2F;image-atrical&#x2F;CumtCs.jpg)</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/15/image-atrical/" data-id="cl9d3gyfz00037kwr5jlh5x67" data-title="HEXO 插入图片" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/04/15/image-atrical/" data-id="cl9kqweg40002s4wr0vq5ghyr" data-title="HEXO 插入图片" class="article-share-link">分享</a>
       
       
       
@@ -455,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl9d3gyg100067kwrd1tdhrdx" data-title="mysql基本使用与注意事项" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cl9kqweg60006s4wrdrt99u14" data-title="mysql基本使用与注意事项" class="article-share-link">分享</a>
       
       
       
@@ -501,199 +681,14 @@
 </ul>
 <h3 id="es6-语法"><a href="#es6-语法" class="headerlink" title="es6 语法"></a>es6 语法</h3><ol>
 <li>箭头函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统写法</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（一个参数小括号可省略）</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（只有一行代码省略写法）</span></span><br><span class="line"><span class="keyword">const</span> f1 = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等效f1</span></span><br><span class="line"><span class="keyword">const</span> f2 = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>箭头函数this指向: 向外层作用域中逐个查找，知道有this的定义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="function"><span class="title">f1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//window</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//obj对象</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>箭头函数this指向: 向外层作用域中逐个查找，知道有this的定义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="function"><span class="title">f1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//window</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//obj对象</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9d3gyfu00007kwr7wep6ei2" data-title="Vue笔记" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-北京交通大学-桑基韬老师面试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/" class="article-date">
-  <time class="dt-published" datetime="2021-09-13T12:52:08.000Z" itemprop="datePublished">2021-09-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/">北京交通大学-桑基韬老师面试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><p>约定9月11号晚上7.45进行线上面试，在邮件回复中已经给出腾讯会议链接、</p>
-<h3 id="问题（吸取上次东北大学郭贵冰老师面试失败的教训，制作了自我介绍的ppt）"><a href="#问题（吸取上次东北大学郭贵冰老师面试失败的教训，制作了自我介绍的ppt）" class="headerlink" title="问题（吸取上次东北大学郭贵冰老师面试失败的教训，制作了自我介绍的ppt）"></a>问题（吸取上次东北大学郭贵冰老师面试失败的教训，制作了自我介绍的ppt）</h3><ol>
-<li>自我介绍，直接使用ppt进行讲解，基本情况、主要课程、大创项目、电影推荐系统、数据挖掘算法实现</li>
-<li>问电影推荐系统是课程要求的吗，itembasecf和userbasecf有什么区别（itembasecf加入新物品是需要更新矩阵？）</li>
-<li>问svm有什么不懂的地方（说支持向量不太懂，老师说知道原理自然就懂了），知道什么是对偶吗（不知道），为什么引入核函数（后面老师又补充是核函数通过计算内积啥的，不会导致维度无穷升高），svm是凸优化问题吗（直接问懵了）</li>
-<li>神经网络是线性还是非线性，单曾网络是先行还是非线性（通过多维数据实现非线性映射？？？）</li>
-<li>坦白拿了哪些offer？回答南理工一个，东北大学挂了（不说好了，挂了体现出自己水平不行哈哈），夏令营基本没参加。</li>
-<li>说过几天通知结果，已经3天了毫无信息，感觉凉了</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/13/%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-%E6%A1%91%E5%9F%BA%E9%9F%AC%E8%80%81%E5%B8%88%E9%9D%A2%E8%AF%95/" data-id="cl9d3gyg5000b7kwr77if4abt" data-title="北京交通大学-桑基韬老师面试" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-预推免面试准备" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="article-date">
-  <time class="dt-published" datetime="2021-08-24T15:06:28.000Z" itemprop="datePublished">2021-08-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">预推免面试准备</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="深度学习的理解"><a href="#深度学习的理解" class="headerlink" title="深度学习的理解"></a>深度学习的理解</h3><ol>
-<li>本质原理：实现非线性映射；（神经网络的节点和参数非常多，通过梯度下降可以使模型适用于绝大多数问题）</li>
-<li>不同任务之间的本质区别：通过设置不同的目标函数（LossFunction）、或输出的模式结构（比如GAN\TRANSFORMER）</li>
-<li>网络结构：不同的网络的内部结构起到的就是提升模型性能的作用（提高准确度、提高训练速度、提高模型速度等）</li>
-</ol>
-<h3 id="实用新型专利"><a href="#实用新型专利" class="headerlink" title="实用新型专利"></a>实用新型专利</h3><ol>
-<li>解决问题：<ol>
-<li>基于交通大数据背景，通过交通视频系统获取需要交通疏导地点，提高出警速度；</li>
-<li>交警动作映射到交通指挥等中，实现交警动作和指挥灯信号的同步；</li>
-</ol>
-</li>
-<li>工作流程：<ol>
-<li>首先对HRnet网络 2d姿态估计模型和videopose3d姿态估计模型进行训练，得到得到基本的交通指挥手势信息库</li>
-<li>对交警动作进行识别并将交通信息响应到交通灯中；</li>
-<li>对为识别动作可进行模型的增量学习；</li>
-</ol>
-</li>
-<li>算法：<ol>
-<li>YOLO:目标检测</li>
-<li>HRNet：用于2d人体姿态估计<ul>
-<li>传统网络结构：高分辨率-&gt;低分辨率-&gt;恢复为高分辨率，是一种串联结构；</li>
-<li>HRNET：整个网络过程都保持高分辨率表征，从网络第一阶段开始，逐步增加网络的低分辨率子网，形成更多阶段，然后将多分辨率子网进行连接，是一种并联结构；</li>
-</ul>
-</li>
-<li>VIDEOPOSE3D：3d人体姿态估计</li>
-</ol>
-</li>
-</ol>
-<h3 id="国创"><a href="#国创" class="headerlink" title="国创"></a>国创</h3><ol>
-<li>结构：<ul>
-<li>数字孪生部分：6自由度机械臂+web端的3d模型实现二者姿态的实时映射</li>
-<li>控制部分：直接控制+视觉控制，视觉控制部分使用yolo算法+videopose3d获取人体姿态，将手臂数据作用在机械臂上</li>
-<li>服务：深度学习服务器 + 边缘设备（机械臂）微型服务器 + Threejs的WEB前端模型</li>
-</ul>
-</li>
-<li>难点：<ul>
-<li>姿态控制时高，网络性能有限，需要网络结构优化（使用YOLOX）</li>
-<li>精度低：视觉识别控制难以满足高精度作业，难以解决（需要使用高精度传感器）</li>
-</ul>
-</li>
-<li>yolo：寻求速度与准确度的平衡！<ul>
-<li>网络输出：x,y,h,w,classes(confidence )</li>
-<li>锚点：在锚点上选择较优的锚框再进行回归，直接回归h和w难度较大</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/leviopku/article/details/82660381">https://blog.csdn.net/leviopku/article/details/82660381</a></li>
-<li>yoloV1：<ul>
-<li>结构: 7个卷积层 + flatten + 全连接层 </li>
-<li>损失函数：误差平方和计算（bounding box损失+confidence损失+class损失）</li>
-<li>缺点：<ol>
-<li>群体性目标检测差：一群鸟</li>
-<li>目标出现新尺寸时预测效果差</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>yolov2：CVPR2017<ul>
-<li>每个卷积层添加BatchNormalization层，同时一处dropout层，减小过拟合，加快收敛</li>
-<li>更高分辨率分类器：448*448</li>
-<li>使用基于anchor的边界框预测，使用网络更加易于收敛</li>
-<li>使用k-means获得priors（anchor）</li>
-</ul>
-</li>
-<li>yolov3：做大做强，再创辉煌</li>
-</ul>
-</li>
-<li>HRNet：用于人体姿态识别<ul>
-<li>将不同分辨率的feature map进行并联</li>
-<li>在并联的基础上，添加不同feature map的交互（fusion），交互方法为：<ul>
-<li>相同分辨率feature map直接复制</li>
-<li>升分辨率使用bilnear upsample +1*1卷积讲channel数统一</li>
-<li>降分辨率使用strid为3*3的卷积（3x3卷积是为了通过学习的方式，降低信息的损耗）</li>
-<li>3个featuremap的融合是相加</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="数据挖掘基本算法："><a href="#数据挖掘基本算法：" class="headerlink" title="数据挖掘基本算法："></a>数据挖掘基本算法：</h3><ol>
-<li>贝叶斯：根据先验概率计算属于某个类别的后验概率，最后取概率最大的分类</li>
-<li>决策树：id3，4.5，CART</li>
-<li>K-MEANS：无监督、聚类迭代</li>
-<li>svm：核函数，通过升维达到使用线性方法解决非线性问题的能力</li>
-</ol>
-<h3 id="transformer和bert模型-nlp任务"><a href="#transformer和bert模型-nlp任务" class="headerlink" title="transformer和bert模型-nlp任务"></a>transformer和bert模型-nlp任务</h3><ol>
-<li>基于mindspore框架实现，</li>
-<li>Transfomer：encoder和decoder，编码器+解码器，input-&gt;编码器编码-&gt;解码器解码输出-&gt;output；<ul>
-<li> encoder： 输入部分（embedding编码）、注意力机制和前馈神经网络</li>
-<li> decoder：相对于encoder多了Masked Mutil-head-Attention，用于覆盖decoder还未见过的单词</li>
-</ul>
-</li>
-<li>Bert结构：Transfomer中多个encoder结构堆叠在一起构成网络结构；</li>
-<li>模型训练：<ol>
-<li>预训练：无监督训练过程，包括掩码语言模型和句子关系模型（时间很长）</li>
-<li>fine-tune：微调训练，根据下游任务进行模型微调训练（速度较快）</li>
-</ol>
-</li>
-<li>Bert优缺点：准确率高，在各类nlp任务中都达到了极高的准确率，但是速度较慢，难以应用于线上任务</li>
-</ol>
-<h3 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h3><ol>
-<li>UserBaseCF：找到用户的相似性矩阵，推荐相似用户所购买的物品</li>
-<li>ItemBaseCF：找到物品的相似性矩阵，推荐相似物品</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" data-id="cl9d3gyg8000h7kwr7hokbafi" data-title="预推免面试准备" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9kqwefz0000s4wr1vffgwxa" data-title="Vue笔记" class="article-share-link">分享</a>
       
       
       
@@ -709,7 +704,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -741,6 +736,14 @@
       <ul>
         
           <li>
+            <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/">Docker基础与使用</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/18/paperReading/">(no title)</a>
           </li>
         
@@ -750,14 +753,6 @@
         
           <li>
             <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/09/tennis/">毕业前日常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/">常忘记命令</a>
           </li>
         
       </ul>

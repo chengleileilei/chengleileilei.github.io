@@ -36,7 +36,11 @@
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -111,13 +115,14 @@
 </ul>
 <h3 id="es6-语法"><a href="#es6-语法" class="headerlink" title="es6 语法"></a>es6 语法</h3><ol>
 <li>箭头函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统写法</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（一个参数小括号可省略）</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（只有一行代码省略写法）</span></span><br><span class="line"><span class="keyword">const</span> f1 = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等效f1</span></span><br><span class="line"><span class="keyword">const</span> f2 = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>箭头函数this指向: 向外层作用域中逐个查找，知道有this的定义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="function"><span class="title">f1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//window</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//obj对象</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>箭头函数this指向: 向外层作用域中逐个查找，知道有this的定义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="function"><span class="title">f1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//window</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//obj对象</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9d3gyfu00007kwr7wep6ei2" data-title="Vue笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9kqwefz0000s4wr1vffgwxa" data-title="Vue笔记" class="article-share-link">分享</a>
       
       
       
@@ -177,6 +182,14 @@
       <ul>
         
           <li>
+            <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/">Docker基础与使用</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/18/paperReading/">(no title)</a>
           </li>
         
@@ -186,14 +199,6 @@
         
           <li>
             <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/09/tennis/">毕业前日常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/">常忘记命令</a>
           </li>
         
       </ul>

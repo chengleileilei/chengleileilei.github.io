@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2022/10/18/paperReading/image-20221018020958467.png">
 <meta property="og:image" content="http://example.com/2022/10/18/paperReading/image-20221018021110587.png">
 <meta property="article:published_time" content="2022-10-17T18:12:30.336Z">
-<meta property="article:modified_time" content="2022-10-17T18:11:53.474Z">
+<meta property="article:modified_time" content="2022-10-23T02:42:59.561Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/10/18/paperReading/image-20221017152707559.png">
@@ -55,7 +55,11 @@
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -109,7 +113,9 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="虚假用户检测工作相关论文"><a href="#虚假用户检测工作相关论文" class="headerlink" title="虚假用户检测工作相关论文"></a>虚假用户检测工作相关论文</h1><h2 id="GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection"><a href="#GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection" class="headerlink" title="GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection"></a>GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection</h2><p><strong>问题背景：</strong>推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈者，修正用户数据在模型中的权重）</p>
-<p><strong>前人相关工作：</strong></p>
+<p>test:</p>
+<script type="math/tex; mode=display">
+f(x)=sin(x)/\sigma</script><p><strong>前人相关工作：</strong></p>
 <ul>
 <li>提升推荐系统鲁棒性：在矩阵分解优化函数中添加m估计量</li>
 <li>欺诈者检测并删除欺诈者：过程容易出错，将正常用户识别为欺诈者</li>
@@ -127,65 +133,50 @@
 <li>将两个工作结合，充分利用用户可靠特征（用户正负评价分布、用户评价数量等评分统计信息）进行模型训练。</li>
 <li>端到端模型，欺诈者检测和评分任务相互耦合</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;"></p>
 <h3 id="GCN-based-Rating-Prediction-Component"><a href="#GCN-based-Rating-Prediction-Component" class="headerlink" title="GCN-based Rating Prediction Component"></a><strong>GCN-based Rating Prediction Component</strong></h3><p>图结构：有向二分图</p>
 <p><strong>任务1：利用多源数据（user_rating、user_features）进行用户嵌入表示</strong></p>
 <p>$z_u$表示user embedding ，且$z_u^0=\pmb{x_u}$</p>
 <p>$z_v$表示item embedding，$z_v^0$随机初始化</p>
 <p>网络迭代过程是一个信息传递的过程（图卷积迭代）</p>
-<img src="/2022/10/18/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;"></p>
 <p>$e_r$为评分r的embedding（评分就是1到5）</p>
 <p>$h_v$表示从item $v\in{N(u)}$节点传递过来的信息，$N(u)$表示用户u交互过的v的集合</p>
-<img src="/2022/10/18/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;"></p>
 <ul>
 <li>更新$z_u$，通过注意力权重进行特征信息聚合</li>
 </ul>
-<p>$$<br>I(u)=N(u)\cup{u}<br>$$</p>
-<img src="/2022/10/18/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;">
-
+<script type="math/tex; mode=display">
+I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;"></p>
 <ul>
 <li>更新$z_v$</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;"></p>
 <ul>
 <li>user-item二分图卷积算法流程：</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;"></p>
 <p>通过不断卷积迭代，得到的节点表示综合了节点本身和所有连接到它们的节点信息</p>
 <p><strong>任务2：评分预测</strong></p>
 <ul>
 <li>将$z_u$和$z_v$拼接，接入一个线性层进行评分预测</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;"></p>
 <h3 id="NRF-based-Fraudster-Detection-Component"><a href="#NRF-based-Fraudster-Detection-Component" class="headerlink" title="NRF-based Fraudster Detection Component"></a>NRF-based Fraudster Detection Component</h3><p>欺诈者检测模块是一个有监督分类器：随机森林不可微，因此使用神经随机森林，</p>
 <ul>
 <li>将数据评分的误差作为特征引入欺诈者检测模块</li>
 </ul>
-<img src="/2022/10/18/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;">
-
-<img src="/2022/10/18/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;"></p>
+<p><img src="/2022/10/18/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;"></p>
 <p>$z_u^*$是user的稠密表示，是神经随机树的输入</p>
 <p>每个决策节点对应一个权重向量w，和输入特征算内积过sigmoid得到走左子树的概率，右子树概率即为用1去减，根据概率大小（大于0.5走左子树）可以确定每个样本的决策路径，而叶子结点根据最终落进去的样本频数可以得到$y=1，0$的概率分布$\pi$, 通过样本连乘积得到一个batch的联合概率分布</p>
-<img src="/2022/10/18/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;"></p>
 <h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>两个模块损失联合训练</p>
-<img src="/2022/10/18/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;">
-
+<p><img src="/2022/10/18/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;"></p>
 <h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a><strong>数据集</strong></h4><ul>
 <li><p><strong>yelp数据集</strong>：使用前人标记的虚假评论区分虚假用户</p>
 </li>
@@ -208,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/18/paperReading/" data-id="cl9d3gyg200077kwr760lfoct" data-title="" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/10/18/paperReading/" data-id="cl9kqweg80007s4wre6fndjsd" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -217,6 +208,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Docker基础与使用
+        
+      </div>
+    </a>
   
   
     <a href="/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap">
@@ -259,6 +259,14 @@
       <ul>
         
           <li>
+            <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/">Docker基础与使用</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/18/paperReading/">(no title)</a>
           </li>
         
@@ -268,14 +276,6 @@
         
           <li>
             <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/09/tennis/">毕业前日常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/10/%E5%B8%B8%E5%BF%98%E8%AE%B0%E5%91%BD%E4%BB%A4/">常忘记命令</a>
           </li>
         
       </ul>
