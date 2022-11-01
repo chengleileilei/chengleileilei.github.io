@@ -255,6 +255,10 @@
       
         <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p><code>docker image ls</code> 查看docker已安装镜像</p>
 <p><code>docker ps -a</code>查看当前运行docker镜像（不带-a表示查看所有docker镜像）</p>
+<p><code>docker run -itd --name mycontainer --gpus all imagename</code>将imagename镜像启动为mycontainer容器，并在后台运行</p>
+<p><code>docker exec -it mycontainer /bin/bash</code> 进入mycontainer容器</p>
+<p><code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> 容器打包为镜像</p>
+<p><code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> 修改镜像name</p>
 
       
     </div>
@@ -405,6 +409,7 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37417648/article/details/114819478">https://blog.csdn.net/qq_37417648/article/details/114819478</a></p>
+<h2 id="设置共享粘贴板"><a href="#设置共享粘贴板" class="headerlink" title="设置共享粘贴板"></a>设置共享粘贴板</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Born_without_fun/article/details/124954654">https://blog.csdn.net/Born_without_fun/article/details/124954654</a></p>
 
       
     </div>

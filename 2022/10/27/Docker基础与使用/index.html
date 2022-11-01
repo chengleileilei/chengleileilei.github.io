@@ -6,15 +6,15 @@
   
   <title>Docker基础与使用 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像）">
+  <meta name="description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像） docker run -itd --name mycontainer --gpus all imagename将imagename镜像启动为mycontainer容器，并在后台运行 docker exec -it mycontainer &#x2F;b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker基础与使用">
 <meta property="og:url" content="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像）">
+<meta property="og:description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像） docker run -itd --name mycontainer --gpus all imagename将imagename镜像启动为mycontainer容器，并在后台运行 docker exec -it mycontainer &#x2F;b">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-27T09:02:53.000Z">
-<meta property="article:modified_time" content="2022-10-27T12:07:06.459Z">
+<meta property="article:modified_time" content="2022-10-30T13:24:27.350Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
@@ -105,6 +105,10 @@
       
         <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p><code>docker image ls</code> 查看docker已安装镜像</p>
 <p><code>docker ps -a</code>查看当前运行docker镜像（不带-a表示查看所有docker镜像）</p>
+<p><code>docker run -itd --name mycontainer --gpus all imagename</code>将imagename镜像启动为mycontainer容器，并在后台运行</p>
+<p><code>docker exec -it mycontainer /bin/bash</code> 进入mycontainer容器</p>
+<p><code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> 容器打包为镜像</p>
+<p><code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> 修改镜像name</p>
 
       
     </div>
