@@ -6,15 +6,15 @@
   
   <title>Docker基础与使用 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像） docker run -itd --name mycontainer --gpus all imagename将imagename镜像启动为mycontainer容器，并在后台运行 docker exec -it mycontainer &#x2F;b">
+  <meta name="description" content="命令查看docker已安装镜像:docker image ls 列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：docker ps -a 删除所有停止运行的容器：sudo docker container prune 将imagename镜像启动为mycontainer容器，并在后台运行：docker run -itd --name mycontainer --gpus all">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker基础与使用">
 <meta property="og:url" content="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="命令docker image ls 查看docker已安装镜像 docker ps -a查看当前运行docker镜像（不带-a表示查看所有docker镜像） docker run -itd --name mycontainer --gpus all imagename将imagename镜像启动为mycontainer容器，并在后台运行 docker exec -it mycontainer &#x2F;b">
+<meta property="og:description" content="命令查看docker已安装镜像:docker image ls 列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：docker ps -a 删除所有停止运行的容器：sudo docker container prune 将imagename镜像启动为mycontainer容器，并在后台运行：docker run -itd --name mycontainer --gpus all">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-27T09:02:53.000Z">
-<meta property="article:modified_time" content="2022-10-30T13:24:27.350Z">
+<meta property="article:modified_time" content="2022-11-17T11:38:39.678Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
@@ -103,12 +103,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p><code>docker image ls</code> 查看docker已安装镜像</p>
-<p><code>docker ps -a</code>查看当前运行docker镜像（不带-a表示查看所有docker镜像）</p>
-<p><code>docker run -itd --name mycontainer --gpus all imagename</code>将imagename镜像启动为mycontainer容器，并在后台运行</p>
-<p><code>docker exec -it mycontainer /bin/bash</code> 进入mycontainer容器</p>
-<p><code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> 容器打包为镜像</p>
-<p><code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> 修改镜像name</p>
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>查看docker已安装镜像:<code>docker image ls</code></p>
+<p>列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：<code>docker ps -a</code></p>
+<p>删除所有停止运行的容器：<code>sudo docker container prune</code></p>
+<p>将imagename镜像启动为mycontainer容器，并在后台运行：<code>docker run -itd --name mycontainer --gpus all imagename</code></p>
+<p>进入mycontainer容器：<code>docker exec -it mycontainer /bin/bash</code> </p>
+<p>容器打包为镜像：<code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> </p>
+<p>修改镜像name：<code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> </p>
+<p>删除镜像（需要停止相应运行的容器）：<code>rmi -f runoob/ubuntu:v4</code> </p>
+<p>停止容器：<code>sudo docker stop 容器名称</code> </p>
 
       
     </div>
@@ -160,7 +163,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -171,6 +174,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/">使用python解压rar和zip压缩包（windows）</a>
+          </li>
         
           <li>
             <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
@@ -186,10 +193,6 @@
         
           <li>
             <a href="/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/">virtual-box 挂载以及持久生效</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
           </li>
         
       </ul>

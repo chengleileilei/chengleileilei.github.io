@@ -81,6 +81,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Vue笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-03-19T03:29:40.000Z" itemprop="datePublished">2022-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/">Vue笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Vue基础语法"><a href="#Vue基础语法" class="headerlink" title="Vue基础语法"></a>Vue基础语法</h2><ul>
+<li>v-text 设置文本;</li>
+<li>v-html 设置文本，可解析html;</li>
+<li>v-on 绑定事件，简写为<code>@</code>，例<code>@click=&quot;f&quot;  @mouseover=&quot;over&quot;</code>, 同时可在事件后面添加.修饰符对事件进行限制，例<code>&lt;input type=&quot;text&quot; @keyup.enter=&quot;fe&quot;&gt;</code>仅在键盘输入enter键后进行触发fe函数；</li>
+<li>v-show 通过display属性控制元素是否显示;</li>
+<li>v-if 是否加载该元素dom树;</li>
+<li>v-bind 绑定属性，简写为<code>:</code>，例 <code>:src=&quot;imgSrc&quot;</code>;</li>
+<li>v-for 根据数据生成列表结构<code>&lt;li v-for=&quot;item in arr&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</code>;</li>
+<li>v-model 实现表单元素的双向绑定<code>&lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;</code>;</li>
+</ul>
+<h3 id="es6-语法"><a href="#es6-语法" class="headerlink" title="es6 语法"></a>es6 语法</h3><ol>
+<li>箭头函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统写法</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（一个参数小括号可省略）</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数（只有一行代码省略写法）</span></span><br><span class="line"><span class="keyword">const</span> f1 = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等效f1</span></span><br><span class="line"><span class="keyword">const</span> f2 = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>箭头函数this指向: 向外层作用域中逐个查找，直到有this的定义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="function"><span class="title">f1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//window</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">//obj对象</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="vue-cli"><a href="#vue-cli" class="headerlink" title="vue-cli"></a>vue-cli</h3><p><code>npm run build</code>卡住<br>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.cnpmjs.org</span><br></pre></td></tr></table></figure><br>重新<code>build</code>即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" data-id="cl9kqwefz0000s4wr1vffgwxa" data-title="Vue笔记" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-预推免面试准备" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/24/%E9%A2%84%E6%8E%A8%E5%85%8D%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="article-date">
@@ -742,53 +796,6 @@
 
 
   
-    <article id="post-vscode使用JupyterNotebook" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/" class="article-date">
-  <time class="dt-published" datetime="2021-03-23T07:55:19.000Z" itemprop="datePublished">2021-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/">vscode使用JupyterNotebook</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
-<li>Anaconda</li>
-<li>VSCode</li>
-<li>Jupyter</li>
-</ul>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>原本准备使用网页版的jupyterNotebook，在配置过程中遇到了不少问题（都是自找的），后来直接重装anaconda，配置config（设置默认路径和启动的浏览器）后就可以用了，但是发现浏览器启动jupyter服务对文件管理和命名不太方便，因此尝试使用vscode的jupyter扩展</p>
-<h3 id="正常情况"><a href="#正常情况" class="headerlink" title="正常情况"></a>正常情况</h3><p>正常安装anaconda会在base环境中自带JupyterNotebook，在vscode中安装python插件（jupyter已经集成在python插件中），然后ctrl+shift+p选择创建jupyterNotebook就会自动连接base环境下的python.exe，即自动连接kernel，就可以编写notebook啦！</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我的vscode选择启动后一直提示：command failed……</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>因为win10环境变量TEMP和TMP 的路径存在中文（我的win10用户名为中文）导致的奇怪问题，将TEMP和TMP的路径改为：”C:/Windows/TEMP”，问题解决！</p>
-<h3 id="Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间"><a href="#Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间" class="headerlink" title="Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间"></a>Tips：以后一定要使用英文命名，防止奇怪问题出现浪费时间</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/23/vscode%E4%BD%BF%E7%94%A8JupyterNotebook/" data-id="cl9kqweg9000as4wraavrgcj3" data-title="vscode使用JupyterNotebook" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -812,7 +819,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -823,6 +830,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/">使用python解压rar和zip压缩包（windows）</a>
+          </li>
         
           <li>
             <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
@@ -838,10 +849,6 @@
         
           <li>
             <a href="/2022/10/03/virtual-box-%E6%8C%82%E8%BD%BD/">virtual-box 挂载以及持久生效</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AC%94%E8%AE%B0/">数学基础与笔记</a>
           </li>
         
       </ul>
