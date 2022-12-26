@@ -294,12 +294,14 @@
         <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>查看docker已安装镜像:<code>docker image ls</code></p>
 <p>列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：<code>docker ps -a</code></p>
 <p>删除所有停止运行的容器：<code>sudo docker container prune</code></p>
-<p>将imagename镜像启动为mycontainer容器，并在后台运行：<code>docker run -itd --name mycontainer --gpus all imagename</code></p>
+<p>将imagename镜像启动为mycontainer容器，并在后台运行：<code>docker run -p 80:80 -itd --name mycontainer --gpus all imagename</code></p>
 <p>进入mycontainer容器：<code>docker exec -it mycontainer /bin/bash</code> </p>
 <p>容器打包为镜像：<code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> </p>
 <p>修改镜像name：<code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> </p>
 <p>删除镜像（需要停止相应运行的容器）：<code>rmi -f runoob/ubuntu:v4</code> </p>
 <p>停止容器：<code>sudo docker stop 容器名称</code> </p>
+<p>将image打包为tar归档：<code>docker save -o demoimage7.tar demoimage7</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base) user@user-Super-Server:/$ sudo docker ps</span><br><span class="line">CONTAINER ID   IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES</span><br><span class="line">9fc156eecb4e   demoimage6   &quot;/bin/bash&quot;   2 weeks ago   Up 2 weeks   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp, 0.0.0.0:5556-&gt;5556/tcp, :::5556-&gt;5556/tcp, 5555/tcp   cld6</span><br></pre></td></tr></table></figure>
 
       
     </div>
