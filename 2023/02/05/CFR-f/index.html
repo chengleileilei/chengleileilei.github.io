@@ -4,17 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>归档: 2022/3 | HAPPY SUMMER VACTION</title>
+  <title>Collaborative filtering recommendation using fusing criteria against shilling attacks | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="天不言自高，地不言自厚，以万物为参照，可洞观一己之不足">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HAPPY SUMMER VACTION">
-<meta property="og:url" content="http://example.com/archives/2022/03/index.html">
+  <meta name="description" content="Collaborative filtering recommendation using fusing criteria against shilling attacks来源connection science 2021 （CCF C类期刊） 问题描述推荐系统存在shilling attack ，即在共现矩阵中恶意添加虚假用户数据。 多数shilling attack攻击方法单，因此提出CFR-F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collaborative filtering recommendation using fusing criteria against shilling attacks">
+<meta property="og:url" content="http://example.com/2023/02/05/CFR-f/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="天不言自高，地不言自厚，以万物为参照，可洞观一己之不足">
+<meta property="og:description" content="Collaborative filtering recommendation using fusing criteria against shilling attacks来源connection science 2021 （CCF C类期刊） 问题描述推荐系统存在shilling attack ，即在共现矩阵中恶意添加虚假用户数据。 多数shilling attack攻击方法单，因此提出CFR-F">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/02/05/CFR-f/image-20230204224120608.png">
+<meta property="og:image" content="http://example.com/2023/02/05/CFR-f/image-20230205114744307.png">
+<meta property="article:published_time" content="2023-02-05T00:40:02.000Z">
+<meta property="article:modified_time" content="2023-02-05T03:57:45.518Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/05/CFR-f/image-20230204224120608.png">
   
     <link rel="alternate" href="/atom.xml" title="HAPPY SUMMER VACTION" type="application/atom+xml">
   
@@ -79,58 +84,77 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-03-27T07:55:19.000Z" itemprop="datePublished">3月 27</time>
+        <section id="main"><article id="post-CFR-f" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/05/CFR-f/" class="article-date">
+  <time class="dt-published" datetime="2023-02-05T00:40:02.000Z" itemprop="datePublished">2023-02-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/27/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">mysql基本使用与注意事项</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Collaborative filtering recommendation using fusing criteria against shilling attacks
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-03-19T03:29:40.000Z" itemprop="datePublished">3月 19</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/19/Vue%E7%AC%94%E8%AE%B0/">Vue笔记</a>
-    </h1>
-  
+        <h1 id="Collaborative-filtering-recommendation-using-fusing-criteria-against-shilling-attacks"><a href="#Collaborative-filtering-recommendation-using-fusing-criteria-against-shilling-attacks" class="headerlink" title="Collaborative filtering recommendation using fusing criteria against shilling attacks"></a>Collaborative filtering recommendation using fusing criteria against shilling attacks</h1><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>connection science 2021 <strong>（CCF C类期刊）</strong></p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>推荐系统存在shilling attack ，即在共现矩阵中恶意添加虚假用户数据。</p>
+<p>多数shilling attack攻击方法单，因此提出CFR-F，融合多个标准进行协同过滤推荐。</p>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><ol>
+<li>根据<strong>用户社交标签</strong>和<strong>交互评分</strong>数据获取相似用户集合</li>
+<li>结合<strong>用户属性</strong>推荐相似的用户集中的item</li>
+</ol>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>用户相似性计算：<ul>
+<li>$\alpha<em>$标签相似性（余弦）+$\beta</em>$共现矩阵相似性（杰卡德），构建top K相似用户集</li>
+<li>计算用户属性相似度$W_{a,b}$ </li>
+</ul>
+</li>
+<li>评分预测：<ul>
+<li>对相似用户集内的所有item计算评分</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2023/02/05/CFR-f/image-20230204224120608.png" alt="image-20230204224120608"></p>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>CFR-T：传统协同过滤</p>
+<p>CFR-B：使用用户属性</p>
+<p>CFR-S：使用标签</p>
+<p>CFR-F：同时使用用户属性和标签</p>
+<p><img src="/2023/02/05/CFR-f/image-20230205114744307.png" alt="image-20230205114744307" style="zoom:50%;"></p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>非常简单的一篇文章，融合多个特征进行用户相似性计算，在一定程度上能够防御shilling attack。<strong>借鉴意义不大。</strong></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/05/CFR-f/" data-id="cldqut3ry0000qkwr96wp6bf5" data-title="Collaborative filtering recommendation using fusing criteria against shilling attacks" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">使用python解压rar和zip压缩包（windows）</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
