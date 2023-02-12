@@ -14,7 +14,7 @@
 <meta property="og:description" content="conda 查看所有conda环境：conda env list conda info -e 删除环境：conda remove -n envname --all 复制环境：conda create -n new_envname --clone source_envname  linux 根据管道符查找进程：ps -aux | grep app.py 后台运行进程且关闭终端不结束并输出日志：noh">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-09T17:13:15.000Z">
-<meta property="article:modified_time" content="2022-11-17T11:34:14.550Z">
+<meta property="article:modified_time" content="2023-02-12T09:04:24.600Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
@@ -111,7 +111,10 @@
 <h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><ul>
 <li>根据管道符查找进程：<code>ps -aux | grep app.py</code></li>
 <li>后台运行进程且关闭终端不结束并输出日志：<code>nohup python manage.py runserver 0.0.0.0:8989 &gt; runoob.log 2&gt;&amp;1 &amp;</code></li>
+<li>查看当前目录下空间使用情况：<code>du -h --max-depth=1 |sort -rh</code></li>
+<li>为git远程仓库生成ssh密钥：</li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br><span class="line">cat home/username/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><ul>
 <li>vue2 创建项目<code>vue init webpack  &quot;项目名称&quot;</code></li>
 </ul>
