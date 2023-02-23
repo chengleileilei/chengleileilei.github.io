@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/7949193859b146b790c1acf5561bb543.png">
 <meta property="article:published_time" content="2023-02-10T03:09:25.000Z">
-<meta property="article:modified_time" content="2023-02-12T09:01:39.431Z">
+<meta property="article:modified_time" content="2023-02-12T18:07:16.136Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/7949193859b146b790c1acf5561bb543.png">
@@ -120,6 +120,14 @@
 </ul>
 </li>
 </ul>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><ul>
+<li>输出类内所有属性和对应取值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span> (<span class="params">self, name, price</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.price = price</span><br><span class="line">im = Item(<span class="string">&#x27;无线&#x27;</span>, <span class="number">259</span>)</span><br><span class="line"><span class="built_in">print</span>(im.__dict__)</span><br><span class="line"><span class="built_in">print</span>(im.__dict__[<span class="string">&#x27;name&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>python类私有属性中的<strong>dict</strong>属性内保存的就是python所有的属性名及其对应的值</p>
+<p>在这个字典之中保存的是python类属性本身，也就是它实际上的内存地址对象。对这个python类属性字典进修改之后，类之中属性的值也会发生相应的改变</p>
+</blockquote>
 <h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(file, mode, encoding)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>默认<code>mode=&quot;r&quot;</code></li>
@@ -189,6 +197,10 @@
       <ul>
         
           <li>
+            <a href="/2023/02/24/%E7%AA%81%E5%87%BB%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/">突击复习感悟</a>
+          </li>
+        
+          <li>
             <a href="/2023/02/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
           </li>
         
@@ -202,10 +214,6 @@
         
           <li>
             <a href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/">使用python解压rar和zip压缩包（windows）</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
           </li>
         
       </ul>
