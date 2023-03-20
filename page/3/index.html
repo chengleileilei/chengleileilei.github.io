@@ -81,163 +81,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-预退免-专业课复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2021-08-02T17:04:47.000Z" itemprop="datePublished">2021-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/">预退免</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h2><h3 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h3><ol>
-<li>分类：专用机、通用机</li>
-<li>发展：电子管计算机-&gt;晶体管计算机-&gt;中小规模集成电路计算机-&gt;大规模集成电路计算机-&gt;巨大规模集成电路计算机<ul>
-<li>性能指标：<ol>
-<li>吞吐量：一台计算机再某一时间间隔内处理的信息量</li>
-<li>响应时间：从输入有效到系统产生响应的时间</li>
-<li>总线宽度：cpu内部运算器和存储器之间互连的内部总线二进制位数</li>
-<li>存储器带宽：单位时间从存储器读出二进制数信息量</li>
-<li>主频：cpu工作受主时钟控制，主频指主时钟的频率<br>3.计算机硬件</li>
-</ol>
-</li>
-<li>运算器（ALU, arithmetic logical unit）：算术运算和逻辑运算</li>
-<li>存储器：存储器有很多存储单元、存储单元的编号成为“地址”</li>
-<li>控制器<ol>
-<li>指令形式：指令码+地址码<ul>
-<li>指令数码化后，存储器的任何位置既可存数据也可存指令</li>
-<li>冯诺依曼结构：指令和数据存放在同一个存储器（存储程序并按地址顺序执行）</li>
-<li>哈佛结构：指令和数据分别存放在两个存储器（速度更快）</li>
-</ul>
-</li>
-<li>控制器基本任务：<ul>
-<li>取指令-&gt;将操作码交给译码器分析-&gt;执行指令-&gt;继续取指令</li>
-<li>取指周期：取指令的一段时间</li>
-<li>执行周期：执行指令的时间</li>
-</ul>
-</li>
-<li>指令流和数据流：<ul>
-<li>字：一个字至少由一个以上字节组成</li>
-<li>字长：一个字的二进制位数</li>
-<li>数据字、指令字</li>
-<li>指令流：取值周期中从内存读出的信息流，流向控制器</li>
-<li>数据流：执行周期中从内存读出的信息流，流向运算器</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>计算机软件<h3 id="第2章-运算方法和运算器"><a href="#第2章-运算方法和运算器" class="headerlink" title="第2章 运算方法和运算器"></a>第2章 运算方法和运算器</h3><ol>
-<li>原码、反码、补码：</li>
-</ol>
-<ul>
-<li>引入补码的概念是因为ALU运算器在进行减法运算时比较困难，使用补码不需要进行减法运算</li>
-<li>引入反码是因为原码直接求补码仍需要进行减法运算，通过反码计算补码则简单的多</li>
-<li>正数的原码、反码和补码全部相同</li>
-<li>负数的反码符号位不变，其余按位取反，补码为在反码的基础上加1</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="数据库原理"><a href="#数据库原理" class="headerlink" title="数据库原理"></a>数据库原理</h2><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
-<li>数据库事务和事务的ACID特性：<ol>
-<li>事务是访问并操作数据的操作序列，是一个数据库的逻辑运行工作单位，一个事务中的操作序列要么全部执行，要么全部不执行</li>
-<li>数据库的ACID特性（事务的四大特性）:<ul>
-<li>原子性：指事务是一个不可再分割的工作单位，事务中的操作要么全部执行，要么全部不执行</li>
-<li>一致性：事务在执行前后数据库保持一致性状态（满足数据库完整性约束）</li>
-<li>隔离性：并发事务在操作和访问数据时进行数据封锁（事务间时隔离的），一个事务不会影响其他事务的结果</li>
-<li>持久性：即使出现了任何事故比如断电等，事务一旦提交，则持久化保存在数据库中（通过日志等备份实现）</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>数据库的范式<ol>
-<li>范式就是关系型数据库的规范要求，范式越高数据库冗余越小</li>
-<li>数据库3大范式：<ul>
-<li>第一范式（1NF）：确保列的原子性，既某个属性不存在子属性（没一列为最小数据单元）</li>
-<li>第二范式（2NF）：在一范式的基础上，非主属性完全依赖于任何一个候选码</li>
-<li>第三范式（3NF）：在二范式的基础上，不存在传递依赖（任何非主属性不依赖于其他非主属性）</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>视图、游标<ol>
-<li>视图：视图是一种虚拟的表，对视图的修改不会影响基本表，更安全；</li>
-<li>游标：从结果集中提取一条记录的机制（利用游标可单独操作结果集中的每一行）</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/03/%E9%A2%84%E9%80%80%E5%85%8D-%E4%B8%93%E4%B8%9A%E8%AF%BE%E5%A4%8D%E4%B9%A0/" data-id="cl9kqwegg000js4wraubdhhir" data-title="预退免" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-c-winapi-多线程通信之事件机制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="article-date">
-  <time class="dt-published" datetime="2021-05-21T12:35:39.000Z" itemprop="datePublished">2021-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">c++ winapi 多线程通信之事件机制</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h3><p>本次作业实现了使用event事件机制进行线程间通信控制，控制两个子进程实现1到100000的累加，第一个子进程thread1负责偶数的累加，第二个子进程thread2负责基数的累加，最终得出计算结果为5000050000，经过res函数验证结果正确。</p>
-<h3 id="实现代码-c"><a href="#实现代码-c" class="headerlink" title="实现代码 c++"></a>实现代码 c++</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> maxn = <span class="number">100000</span>;</span><br><span class="line">CRITICAL_SECTION cs;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">thread1</span><span class="params">(PVOID pvParam)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//进入临界区后进行屏幕输出，防止两个线程同时输出导致输出混乱</span></span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Threat1 is running!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line">	<span class="comment">//打开event1事件</span></span><br><span class="line">	HANDLE hEvent = <span class="built_in">OpenEvent</span>(EVENT_ALL_ACCESS, TRUE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= maxn; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="comment">//等待event1为受信状态后向下执行</span></span><br><span class="line">		<span class="built_in">WaitForSingleObject</span>(hEvent, INFINITE);</span><br><span class="line">		<span class="comment">//cout &lt;&lt; &quot;hevent1 is true&quot; &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//设置event1 为未受信状态，防止其他线程操作</span></span><br><span class="line">		<span class="comment">//ResetEvent(hEvent);</span></span><br><span class="line">		sum += i;</span><br><span class="line">		<span class="comment">//操作结束后更改event1为受信状态，允许其他子线程访问</span></span><br><span class="line">		<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">thread2</span><span class="params">(PVOID pvParam)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Threat2 is running!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line">	HANDLE hEvent = <span class="built_in">OpenEvent</span>(EVENT_ALL_ACCESS, TRUE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxn; i += <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">WaitForSingleObject</span>(hEvent, INFINITE);</span><br><span class="line">		<span class="comment">//ResetEvent(hEvent);</span></span><br><span class="line">		sum += i;</span><br><span class="line">		<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">res</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> s = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxn; i++) &#123;</span><br><span class="line">		s += i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">InitializeCriticalSection</span>(&amp;cs);</span><br><span class="line">	<span class="comment">//创建事件event1</span></span><br><span class="line">	HANDLE hEvent = <span class="built_in">CreateEvent</span>(<span class="literal">NULL</span>, FALSE, FALSE, <span class="built_in">TEXT</span>(<span class="string">&quot;event1&quot;</span>));</span><br><span class="line">	<span class="comment">//CreateEvent()参数分别表示安全属性、人工重置选项、初始受信状态、对象名，第二个False表示不使用人工重置即自动重置，在event被获取到后（WaitForSingleObject）自动变为未受信状态，不需要使用ResetEvent进行状态变更</span></span><br><span class="line">	<span class="comment">//text（）作用是实现对字符处理的透明化，不论是否使用 unicode 字符集，使用 TEXT 宏都可以使程序正常使用，</span></span><br><span class="line">	<span class="comment">//如果程序中有 unicode 宏的，那么就使用宽字符，否则使用单字节字符，保证程序的可移植性</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;event1 was created and fIinitialState is False \n&quot;</span>;</span><br><span class="line">	<span class="comment">//设置event1事件为受信状态</span></span><br><span class="line">	<span class="built_in">SetEvent</span>(hEvent);</span><br><span class="line">	<span class="comment">//创建子进程threat1和threat2</span></span><br><span class="line">	HANDLE hThreat1 = <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, thread1, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	HANDLE hThreat2 = <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, thread2, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="built_in">EnterCriticalSection</span>(&amp;cs);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;threat1 and threat2 were created!\n&quot;</span>;</span><br><span class="line">	<span class="built_in">LeaveCriticalSection</span>(&amp;cs);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//ResumeThread(hThreat1);</span></span><br><span class="line">	<span class="comment">//ResumeThread(hThreat1);</span></span><br><span class="line">	HANDLE hThreats[<span class="number">2</span>] = &#123; hThreat1,hThreat2 &#125;;</span><br><span class="line">	<span class="built_in">WaitForMultipleObjects</span>(<span class="number">2</span>, hThreats, TRUE, INFINITE);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Mutil threats result of the sum from 1 to &quot;</span>&lt;&lt;maxn&lt;&lt;<span class="string">&quot; is &quot;</span> &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Right result of the sum from 1 to &quot;</span> &lt;&lt; maxn &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; <span class="built_in">res</span>() &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/c-winapi-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E4%B9%8B%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" data-id="cl9kqweg20001s4wr201id02f" data-title="c++ winapi 多线程通信之事件机制" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-linux容器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/26/linux%E5%AE%B9%E5%99%A8/" class="article-date">
@@ -674,15 +517,7 @@
       <ul>
         
           <li>
-            <a href="/2023/03/04/%E2%80%9CA%20Survey%20of%20Adversarial%20Learning%20on%20Graph%E2%80%9D/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/04/%E2%80%9CAdversarial%20Attacks%20and%20Defenses%20on%20Graphs-%20A%20Review,%20A%20Tool%20and%20Empirical%20Studies%E2%80%9D%20(Jin%20%E7%AD%89,%202020,%20p.%201)/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/26/windows10-%E9%87%8D%E5%90%AF%E5%90%8E%E5%9B%BE%E6%A0%87%E9%A1%BA%E5%BA%8F%E6%89%93%E4%B9%B1%E9%97%AE%E9%A2%98/">windows10 重启后图标顺序打乱问题</a>
+            <a href="/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">windows常见问题汇总</a>
           </li>
         
           <li>
@@ -691,6 +526,14 @@
         
           <li>
             <a href="/2023/02/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">python开发指南</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/CFR-f/">Collaborative filtering recommendation using fusing criteria against shilling attacks</a>
           </li>
         
       </ul>
