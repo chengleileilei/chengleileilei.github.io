@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Docker基础与使用 | HAPPY SUMMER VACTION</title>
+  <title>github ssh链接失效修复记录 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="命令查看docker已安装镜像:docker image ls 列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：docker ps -a 删除所有停止运行的容器：sudo docker container prune 将imagename镜像启动为mycontainer容器，并在后台运行：docker run -p 80:80 -itd --name mycontainer -">
+  <meta name="description" content="问题windows10使用ssh-keygen -t rsa重新生成密钥并配置到github 设置后，一直无法连接github，无法push，ssh -T git@github.com提示kex_exchange_identification: Connection closed by remote host 解决 在申请ssh秘钥之前，首先要重置全局git用户名和邮箱地址。  12$ git c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker基础与使用">
-<meta property="og:url" content="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="github ssh链接失效修复记录">
+<meta property="og:url" content="http://example.com/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="命令查看docker已安装镜像:docker image ls 列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：docker ps -a 删除所有停止运行的容器：sudo docker container prune 将imagename镜像启动为mycontainer容器，并在后台运行：docker run -p 80:80 -itd --name mycontainer -">
+<meta property="og:description" content="问题windows10使用ssh-keygen -t rsa重新生成密钥并配置到github 设置后，一直无法连接github，无法push，ssh -T git@github.com提示kex_exchange_identification: Connection closed by remote host 解决 在申请ssh秘钥之前，首先要重置全局git用户名和邮箱地址。  12$ git c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-27T09:02:53.000Z">
-<meta property="article:modified_time" content="2022-12-28T10:45:17.932Z">
+<meta property="article:published_time" content="2023-05-13T12:40:59.000Z">
+<meta property="article:modified_time" content="2023-05-13T12:48:48.701Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
@@ -81,10 +81,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Docker基础与使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-github-ssh链接失效修复记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time class="dt-published" datetime="2022-10-27T09:02:53.000Z" itemprop="datePublished">2022-10-27</time>
+    <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2023-05-13T12:40:59.000Z" itemprop="datePublished">2023-05-13</time>
 </a>
     
   </div>
@@ -95,7 +95,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Docker基础与使用
+      github ssh链接失效修复记录
     </h1>
   
 
@@ -103,22 +103,25 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>查看docker已安装镜像:<code>docker image ls</code></p>
-<p>列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：<code>docker ps -a</code></p>
-<p>删除所有停止运行的容器：<code>sudo docker container prune</code></p>
-<p>将imagename镜像启动为mycontainer容器，并在后台运行：<code>docker run -p 80:80 -itd --name mycontainer --gpus all imagename</code></p>
-<p>进入mycontainer容器：<code>docker exec -it mycontainer /bin/bash</code> </p>
-<p>容器打包为镜像：<code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> </p>
-<p>修改镜像name：<code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> </p>
-<p>删除镜像（需要停止相应运行的容器）：<code>rmi -f [IMAGE ID]</code> </p>
-<p>停止容器：<code>sudo docker stop 容器名称</code> </p>
-<p>将image打包为tar归档：<code>docker save -o demoimage7.tar demoimage7</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base) user@user-Super-Server:/$ sudo docker ps</span><br><span class="line">CONTAINER ID   IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES</span><br><span class="line">9fc156eecb4e   demoimage6   &quot;/bin/bash&quot;   2 weeks ago   Up 2 weeks   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp, 0.0.0.0:5556-&gt;5556/tcp, :::5556-&gt;5556/tcp, 5555/tcp   cld6</span><br></pre></td></tr></table></figure>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>windows10使用<code>ssh-keygen -t rsa</code>重新生成密钥并配置到github 设置后，一直无法连接github，无法push，<code>ssh -T git@github.com</code>提示<code>kex_exchange_identification: Connection closed by remote host</code></p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ol>
+<li>在申请ssh秘钥之前，首先要重置全局git用户名和邮箱地址。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">&quot;xxx&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">&quot;xxx@qq.com&quot;</span></span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用下面的命令生成秘钥，注意这里一定要加上上面注册的那个邮箱地址</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C <span class="string">&quot;xxx@qq.com&quot;</span></span></span><br><span class="line">一路回车，密码为空。</span><br></pre></td></tr></table></figure>
+<ol>
+<li>将_rsa.pub文件中的密码复制粘贴到git或者码云中</li>
+<li>成功</li>
+</ol>
+<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33708432/article/details/88599547">https://blog.csdn.net/weixin_33708432/article/details/88599547</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" data-id="cl9sft8v20000lowr4chf0jq7" data-title="Docker基础与使用" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" data-id="clhlzhkcu00007kwr30w5h2on" data-title="github ssh链接失效修复记录" class="article-share-link">分享</a>
       
       
       
@@ -128,19 +131,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/10/18/paperReading/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">windows常见问题汇总</div>
     </a>
   
 </nav>
