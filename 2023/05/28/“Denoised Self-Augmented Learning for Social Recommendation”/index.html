@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Denoised Self-Augmented Learning for Social Recommendation | HAPPY SUMMER VACTION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Denoised Self-Augmented Learning for Social Recommendation 背景：社交推荐系统旨在从用户-项目交互图 Gr &#x3D; {U, V, Er} 和用户用户社交图 Gs &#x3D; {U, Es} 中学习模型，对用户兴趣进行编码以做出准确的推荐。  问题：社交推荐中存在很多兴趣不相关的群体，例如同学，同事等。导致社交信息在表征用户偏好时不可避免地会产生噪音。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Denoised Self-Augmented Learning for Social Recommendation">
+<meta property="og:url" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/index.html">
+<meta property="og:site_name" content="HAPPY SUMMER VACTION">
+<meta property="og:description" content="Denoised Self-Augmented Learning for Social Recommendation 背景：社交推荐系统旨在从用户-项目交互图 Gr &#x3D; {U, V, Er} 和用户用户社交图 Gs &#x3D; {U, Es} 中学习模型，对用户兴趣进行编码以做出准确的推荐。  问题：社交推荐中存在很多兴趣不相关的群体，例如同学，同事等。导致社交信息在表征用户偏好时不可避免地会产生噪音。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/V7QF7HVQ.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/J9LWRQYU.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/6WRJ7ZQ3.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/UAP3MJLP.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/CHZ7SBQY.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/NNPL9N4A.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/26APJYWK.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/B7SZWJVC.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/HNWTNMLX.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/AK8H3FW8.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/GIUDFBY4.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/屏幕截图%202023-05-29%20023845.jpg">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/4UG89AGV.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/BHKE37IR.png">
+<meta property="og:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/QCK6DRXX.png">
+<meta property="article:published_time" content="2023-05-28T02:18:14.000Z">
+<meta property="article:modified_time" content="2023-06-10T07:16:48.541Z">
+<meta property="article:author" content="Cheng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/V7QF7HVQ.png">
+  
+    <link rel="alternate" href="/atom.xml" title="HAPPY SUMMER VACTION" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">HAPPY SUMMER VACTION</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-“Denoised Self-Augmented Learning for Social Recommendation”" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/" class="article-date">
+  <time class="dt-published" datetime="2023-05-28T02:18:14.000Z" itemprop="datePublished">2023-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Denoised Self-Augmented Learning for Social Recommendation
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Denoised-Self-Augmented-Learning-for-Social-Recommendation"><a href="#Denoised-Self-Augmented-Learning-for-Social-Recommendation" class="headerlink" title="Denoised Self-Augmented Learning for Social Recommendation"></a>Denoised Self-Augmented Learning for Social Recommendation</h1><ol>
+<li><p><strong>背景：</strong>社交推荐系统旨在从用户-项目交互图 Gr = {U, V, Er} 和用户用户社交图 Gs = {U, Es} 中学习模型，对用户兴趣进行编码以做出准确的推荐。</p>
+</li>
+<li><p><strong>问题：</strong>社交推荐中存在很多兴趣不相关的群体，例如同学，同事等。导致社交信息在表征用户偏好时不可避免地会产生噪音。</p>
+</li>
+<li><p><strong>贡献：</strong>提出DSL（Denoised Self-Augmented Learning）范式：</p>
+<ol>
+<li><p>自监督去噪：保留有用的社交关系</p>
+</li>
+<li><p>跨视图对齐：文章使用<span style="color: rgba(0, 0, 0, 0.88)"><span style="background-color: rgb(249, 249, 254)">双视图图神经网络编码</span>&lt;/span&gt;<strong>用户社交</strong><span style="color: rgba(0, 0, 0, 0.88)"><span style="background-color: rgb(249, 249, 254)">和</span>&lt;/span&gt;<strong>交互图</strong>中的潜在表示。在这个结构中，每个视图都有一个独立的编码器来学习节点的表示，利用可学习的相似性映射函数将两个视图对齐。</span></span></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="结构图："><a href="#结构图：" class="headerlink" title="结构图："></a>结构图：</h2><p><img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/V7QF7HVQ.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;V7QF7HVQ&quot; width=&quot;1000&quot; height=&quot;389.21226232052777&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/V7QF7HVQ.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+<ol>
+<li><p>两个视图：</p>
+<ul>
+<li>用户商品视图-&gt;用户表示$\bar{e}_i^{(r)}$</li>
+<li>用户社交视图-&gt;用户表示$\bar{e}_i^{(s)}$</li>
+</ul>
+</li>
+<li><p>嵌入表示聚合：为了聚合Gr和Gs中不同顺序编码的表示</p>
+<p><img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/J9LWRQYU.png" alt></p>
+</li>
+<li><p>用户相似度：</p>
+<ul>
+<li><p>用户商品视图-&gt;$z<em>{i,i^`}=[\bar{e}_i^{(r)};\bar{e}</em>{i`}^{(r)}]$</p>
+</li>
+<li><p>社交网络视图-&gt;$\hat{z}<em>{i,i^`}=[\bar{e}_i^{(s)};\bar{e}</em>{i`}^{(s)}]$</p>
+</li>
+<li><p>相似度融合：d，T，c为可学习参数<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/6WRJ7ZQ3.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>无监督去噪：用户商品视图得到的相似性指导社交视图的相似性</p>
+<p><img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/UAP3MJLP.png" alt></p>
+</li>
+</ol>
+<h2 id="多目标优化"><a href="#多目标优化" class="headerlink" title="多目标优化"></a>多目标优化</h2><ol>
+<li><p>用户-商品交互可能性：<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/CHZ7SBQY.png" alt></p>
+</li>
+<li><p>用户-用户相似性：<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/NNPL9N4A.png" alt></p>
+</li>
+<li><p>推荐损失：bpr<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/26APJYWK.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;26APJYWK&quot; width=&quot;453&quot; height=&quot;69&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/26APJYWK.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+</li>
+<li><p>社交关系损失：bpr<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/B7SZWJVC.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;B7SZWJVC&quot; width=&quot;461&quot; height=&quot;66&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/B7SZWJVC.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+<p>其中$u_i+$表示和$u_i$相连接的user，$u_i-$表示和$u_i$未连接的user</p>
+</li>
+<li><p>总损失：<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/HNWTNMLX.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;HNWTNMLX&quot; width=&quot;543&quot; height=&quot;39&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/HNWTNMLX.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+</li>
+</ol>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><ol>
+<li><p>数据集：</p>
+<ul>
+<li>Ciao：DVD相关评分数据集</li>
+<li>Epinions：消费者评论网站数据，Epinions适用于社会化推荐任务，规模较大，包含用户对电影的评分信息，同时包含用户间的信任社交信息。</li>
+<li>Yelp</li>
+</ul>
+<p><img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/AK8H3FW8.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;AK8H3FW8&quot; width=&quot;456&quot; height=&quot;132&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/AK8H3FW8.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+</li>
+<li><p>BaseLine</p>
+<ol>
+<li><strong>基于MF的推荐</strong></li>
+</ol>
+<ul>
+<li>PFM[2007]：一种概率方法，使用矩阵分解将用户和项目分解为表示的潜在向量<ul>
+<li>TrustMF [2016]：将用户之间的社交关系作为社会信息引入矩阵分解，提高推荐性能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>注意力社交推荐：</strong></p>
+<pre><code>*   EATNN \[2019]：建立在注意力机制上的自适应迁移学习模型，用于聚合来自用户交互和社会关系的信息。
+</code></pre><ol>
+<li><strong>GNN增强的社交推荐：</strong></li>
+</ol>
+<ul>
+<li>DiffNet [2019]：一种深度影响力传播架构，用社交影响力扩散组件递归更新用户的嵌入。<ul>
+<li>DGRec [2019]：该社交推荐系统利用图注意力网络对用户的动态行为模式和社交影响进行联合建模。</li>
+</ul>
+</li>
+<li><strong>NGCF+ [ 2019]</strong>：一种 GNN 增强型协作过滤方法，通过具有社交意识的用户-项目关系图执行消息传递。</li>
+</ul>
+<ol>
+<li><strong>自监督社交推荐：</strong><ul>
+<li><strong>MHCN [2021]</strong>：提出了多通道超图卷积网络，考虑高阶关系来增强社交推荐。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>KCGN [2021]：通过多任务学习框架将商品的内在知识与社交网络相结合<ul>
+<li>SMIN [2021]：该模型将元路径引导的异构图学习任务引入入社交推荐，使用互信息最大化的自我监督信号。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实验结果：%Imp 表示相对于所有基线的平均改进。<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/GIUDFBY4.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;GIUDFBY4&quot; width=&quot;1513&quot; height=&quot;277&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/GIUDFBY4.png&quot; ztype=&quot;zimage&quot;&gt;"><img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/屏幕截图 2023-05-29 023845.jpg" alt></p>
+</li>
+<li><p>消融实验：设置了三个模型</p>
+<ul>
+<li><p>DSL-d：去除跨视图自监督去噪模块即$L_{ssl}$;</p>
+</li>
+<li><p>DSL-s：去除社交模块，即$L_{soc}$;</p>
+</li>
+<li><p>DSL-c：用对比学习损失替代$L_{ssl}$;</p>
+</li>
+<li><p>实验结果：表明去噪模块和社交网络都有用<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/4UG89AGV.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;4UG89AGV&quot; width=&quot;718&quot; height=&quot;254&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/4UG89AGV.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>鲁棒性评估</strong></p>
+<ol>
+<li><p>数据稀疏：将数据按照节点的度分四类(0,5)、[5,10)、[ 10,15) 和 [20, +∞)<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/BHKE37IR.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;BHKE37IR&quot; width=&quot;1031&quot; height=&quot;633&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/BHKE37IR.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+</li>
+<li><p>数据噪音：为user-item图添加虚假边（10%、20%、30%）<img src="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/QCK6DRXX.png" alt="\&lt;img alt=&quot;&quot; data-attachment-key=&quot;QCK6DRXX&quot; width=&quot;1495&quot; height=&quot;623&quot; src=&quot;“Denoised Self-Augmented Learning for Social Recommendation”/QCK6DRXX.png&quot; ztype=&quot;zimage&quot;&gt;"></p>
+<ul>
+<li>归因：<ul>
+<li>社交网络的自监督信号</li>
+<li>跨域的自增强，从交互视图学习有用信息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="启发"><a href="#启发" class="headerlink" title="启发"></a>启发</h2><ul>
+<li>将模型在稀疏数据上的表现归为鲁棒性，即将<strong>数据稀疏问题归为鲁棒性问题</strong>，属于推荐任务中的非对抗鲁棒性</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/" data-id="clipnygv20000ccwr26hx7449" data-title="Denoised Self-Augmented Learning for Social Recommendation" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">github ssh链接失效修复记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/">Denoised Self-Augmented Learning for Social Recommendation</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/">github ssh链接失效修复记录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">windows常见问题汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/24/%E7%AA%81%E5%87%BB%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/">突击复习感悟</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Cheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
