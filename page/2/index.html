@@ -81,6 +81,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Docker基础与使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-10-27T09:02:53.000Z" itemprop="datePublished">2022-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/">Docker基础与使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>查看docker已安装镜像:<code>docker image ls</code></p>
+<p>列出所有在运行的容器信息（带-a表示显示所有的容器，包括未运行的）：<code>docker ps -a</code></p>
+<p>删除所有停止运行的容器：<code>sudo docker container prune</code></p>
+<p>将imagename镜像启动为mycontainer容器，并在后台运行：<code>docker run -p 80:80 -itd --name mycontainer --gpus all imagename</code></p>
+<p>进入mycontainer容器：<code>docker exec -it mycontainer /bin/bash</code> </p>
+<p>容器打包为镜像：<code>sudo docker commit -a &quot;nathan&quot; -m &quot;create new img&quot; eda05ad514f8 consul:v0</code> </p>
+<p>修改镜像name：<code>docker tag 【镜像ID】【镜像名称】:【tag版本信息】</code> </p>
+<p>删除镜像（需要停止相应运行的容器）：<code>rmi -f [IMAGE ID]</code> </p>
+<p>停止容器：<code>sudo docker stop 容器名称</code> </p>
+<p>将image打包为tar归档：<code>docker save -o demoimage7.tar demoimage7</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base) user@user-Super-Server:/$ sudo docker ps</span><br><span class="line">CONTAINER ID   IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES</span><br><span class="line">9fc156eecb4e   demoimage6   &quot;/bin/bash&quot;   2 weeks ago   Up 2 weeks   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp, 0.0.0.0:5556-&gt;5556/tcp, :::5556-&gt;5556/tcp, 5555/tcp   cld6</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/27/Docker%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%BD%BF%E7%94%A8/" data-id="cl9sft8v20000lowr4chf0jq7" data-title="Docker基础与使用" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-paperReading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/18/paperReading/" class="article-date">
@@ -658,59 +707,6 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
 
 
   
-    <article id="post-夏令营" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="article-date">
-  <time class="dt-published" datetime="2021-08-02T17:05:06.000Z" itemprop="datePublished">2021-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/">夏令营</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>由于前5学期成绩处于保研边缘，大三下学期把主要精力放在课程考试上了，在考试基本全结束后投递了一些院校（此时大部分院校已经截至了），投了大概7、8所，最终只有西电入营了，最后挂了。</p>
-<h3 id="西电"><a href="#西电" class="headerlink" title="西电"></a>西电</h3><ol>
-<li>自我介绍两分钟<br>光准备英文自我介绍了，中文的却一下子懵了，说的比较乱</li>
-<li>问了简历上gpu多线程的课程设计，问怎么体现多线程的性能优势的，多大的数据量（其实就是win32的多线程程序设计，没用到大规模数据，回答的很烂）</li>
-<li>问了决策树的原理，有哪几种决策树<br>原理回答感觉还可以（但是逻辑不够清晰），后面决策树我就记得id3和c4.5，回答了个信息增益和信息增益率，答的很不完全</li>
-<li>数学建模时间序列模型是什么模型，我真不知道，我以为时间序列模型就是一种模型，当时就用spss处理的，原理一点不知道<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4>当时抱着随便试试的心态，也是第一次面试不知道准备点什么。面试结束竟然自我感觉良好，现在复盘才发现回答的太烂了。</li>
-</ol>
-<h3 id="改进点"><a href="#改进点" class="headerlink" title="改进点"></a>改进点</h3><ol>
-<li>简历优化：主要优化项目经历，加点干货</li>
-<li>简历复盘：对简历上的内容充分复习，基本都会问</li>
-<li>搜集目标院校信息，尽快联系老师！（不知道8月份联系老师是否合适）</li>
-<li>英语准备：自我介绍、专业词汇、常见英文问题（知乎有收藏）、简历问题英文准备（有时间的话）</li>
-<li>专业课复习</li>
-<li>算法：5 per day </li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A5/" data-id="cl9kqwegb000ds4wrg4jm2dcn" data-title="夏令营" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -734,7 +730,7 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -745,6 +741,10 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/07/05/allbumentation/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/">Denoised Self-Augmented Learning for Social Recommendation</a>
@@ -760,10 +760,6 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
         
           <li>
             <a href="/2023/02/24/%E7%AA%81%E5%87%BB%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/">突击复习感悟</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
           </li>
         
       </ul>
