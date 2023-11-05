@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>windows常见问题汇总 | HAPPY SUMMER VACTION</title>
+  <title>linux开发 | HAPPY SUMMER VACTION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿以管理员身份运行PowerShell，并执行以下下命令： 1Get-PnpDevice | Where-Object &amp;#123;$_.FriendlyName -like &quot;*客厅的奇异果*&quot;&amp;#125;|ForEach-Object&amp;#123;pnputil.exe &#x2F;remove-device">
+  <meta name="description" content="ldd命令 ldd命令是Linux系统中的一个命令，用于查看可执行文件或共享库文件所依赖的共享库列表。该命令会输出一个文件或共享库文件所依赖的共享库列表，以及这些共享库的绝对路径。如果一个文件或共享库文件没有依赖任何共享库，那么该命令将会输出一条信息，说明该文件或共享库文件不需要依赖任何共享库 。 ldd &#x2F;usr&#x2F;bin&#x2F;vim  ssh和sshd命令 ssh和sshd都是Linux系统中的命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows常见问题汇总">
-<meta property="og:url" content="http://example.com/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:title" content="linux开发">
+<meta property="og:url" content="http://example.com/2023/09/05/linux%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="HAPPY SUMMER VACTION">
-<meta property="og:description" content="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿以管理员身份运行PowerShell，并执行以下下命令： 1Get-PnpDevice | Where-Object &amp;#123;$_.FriendlyName -like &quot;*客厅的奇异果*&quot;&amp;#125;|ForEach-Object&amp;#123;pnputil.exe &#x2F;remove-device">
+<meta property="og:description" content="ldd命令 ldd命令是Linux系统中的一个命令，用于查看可执行文件或共享库文件所依赖的共享库列表。该命令会输出一个文件或共享库文件所依赖的共享库列表，以及这些共享库的绝对路径。如果一个文件或共享库文件没有依赖任何共享库，那么该命令将会输出一条信息，说明该文件或共享库文件不需要依赖任何共享库 。 ldd &#x2F;usr&#x2F;bin&#x2F;vim  ssh和sshd命令 ssh和sshd都是Linux系统中的命令">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-20T11:03:19.000Z">
-<meta property="article:modified_time" content="2023-08-01T07:41:05.823Z">
+<meta property="article:published_time" content="2023-09-05T10:23:28.000Z">
+<meta property="article:modified_time" content="2023-09-05T12:57:37.048Z">
 <meta property="article:author" content="Cheng">
 <meta name="twitter:card" content="summary">
   
@@ -81,10 +81,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-windows常见问题汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-linux开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
-  <time class="dt-published" datetime="2023-03-20T11:03:19.000Z" itemprop="datePublished">2023-03-20</time>
+    <a href="/2023/09/05/linux%E5%BC%80%E5%8F%91/" class="article-date">
+  <time class="dt-published" datetime="2023-09-05T10:23:28.000Z" itemprop="datePublished">2023-09-05</time>
 </a>
     
   </div>
@@ -95,7 +95,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      windows常见问题汇总
+      linux开发
     </h1>
   
 
@@ -103,39 +103,26 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿"><a href="#打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿" class="headerlink" title="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿"></a>打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿</h2><p>以管理员身份运行PowerShell，并执行以下下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-PnpDevice | Where-Object &#123;$_.FriendlyName -like &quot;*客厅的奇异果*&quot;&#125;|ForEach-Object&#123;pnputil.exe /remove-device $_.InstanceId &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24269643/article/details/107221434">https://blog.csdn.net/qq_24269643/article/details/107221434</a></p>
-<h2 id="windows10-重启后图标顺序打乱"><a href="#windows10-重启后图标顺序打乱" class="headerlink" title="windows10 重启后图标顺序打乱"></a>windows10 重启后图标顺序打乱</h2><ol>
-<li>打开运行，输入命令Gpedit.msc，点击确定。</li>
-<li>在本地策略组编辑器中打开用户配置/管理模板/桌面。</li>
-<li>在右侧找到退出时不保存设置，双击打开。</li>
-<li>在新窗口中选择已禁用，点击确定。</li>
-</ol>
-<h2 id="绿联拓展坞连接显示器唤醒异常"><a href="#绿联拓展坞连接显示器唤醒异常" class="headerlink" title="绿联拓展坞连接显示器唤醒异常"></a>绿联拓展坞连接显示器唤醒异常</h2><ol>
-<li>笔记本型号为yoga14s锐龙5800h版本，使用绿联5合1拓展坞(型号CM418)，通过hdmi接口连接外置显示器(LG 27UL550w)</li>
-<li>相关设置如下：<ul>
-<li>电源和睡眠 设置为30分钟不操作关闭屏幕、从不睡眠；</li>
-<li>设备管理器/通用串行总线控制器/属性/电源管理 已关闭全部”允许计算机关闭此设备以节约电源”</li>
-<li>高级电源设置/usb选择性暂停设置已禁用；</li>
+        <h2 id="ldd命令"><a href="#ldd命令" class="headerlink" title="ldd命令"></a>ldd命令</h2><ul>
+<li>ldd命令是Linux系统中的一个命令，用于查看可执行文件或共享库文件所依赖的共享库列表。该命令会输出一个文件或共享库文件所依赖的共享库列表，以及这些共享库的绝对路径。如果一个文件或共享库文件没有依赖任何共享库，那么该命令将会输出一条信息，说明该文件或共享库文件不需要依赖任何共享库 。</li>
+<li><code>ldd /usr/bin/vim</code></li>
 </ul>
-</li>
-<li>问题：<ul>
-<li>电脑屏幕自动关闭后等待一段时间唤醒电脑屏幕，外接屏幕无信号响应但是笔记本可检测到显示器，拓展坞连接的其他外设工作正常；此时重新插拔拓展坞或者重启电脑，外接显示器才可恢复正常；</li>
-<li>如果电脑屏幕自动关闭后一小段时间内唤醒屏幕，外接屏幕正常唤醒；</li>
-<li>使用typec转hdmi转换器直接连接显示器没有上述问题</li>
+<h2 id="ssh和sshd命令"><a href="#ssh和sshd命令" class="headerlink" title="ssh和sshd命令"></a>ssh和sshd命令</h2><p> ssh和sshd都是Linux系统中的命令，用于远程登录和控制。其中，ssh是客户端命令，用于连接远程服务器；而sshd是服务端命令，用于接受远程连接请求并提供相应的服务</p>
+<h2 id="dpkg"><a href="#dpkg" class="headerlink" title="dpkg"></a>dpkg</h2><ul>
+<li>dpkg是Debian Linux系统中的一个命令，用于管理安装在系统上的软件包。该命令可以用于安装、卸载、查询、更新和管理软件包。dpkg命令可以与apt-get命令一起使用，以便更好地管理软件包 .</li>
+<li>dpkg和apt都是Debian Linux系统中的命令，用于管理安装在系统上的软件包。其中，dpkg是Debian Linux系统中的低级别工具，用于安装、卸载、查询、更新和管理软件包。而apt是Debian Linux系统中的高级别工具，它可以自动解决依赖关系并安装软件包 .</li>
 </ul>
-</li>
-<li>解决：<ul>
-<li>暂无解决方案，大概率为拓展坞问题；</li>
-</ul>
-</li>
-</ol>
-
+<h2 id="您可以通过以下方式来查看软件是通过apt安装还是源码安装："><a href="#您可以通过以下方式来查看软件是通过apt安装还是源码安装：" class="headerlink" title="您可以通过以下方式来查看软件是通过apt安装还是源码安装："></a>您可以通过以下方式来查看软件是通过apt安装还是源码安装：</h2><p>如果您使用的是Debian或Ubuntu等基于Debian的Linux发行版，可以使用以下命令来查看软件包的安装方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -s &lt;package_name&gt; | grep &quot;Source: &quot;</span><br></pre></td></tr></table></figure>
+<p>如果输出结果中包含Source: package，则表示该软件包是通过源码编译安装的；否则，该软件包是通过apt安装的。</p>
+<p>如果您使用的是Red Hat、CentOS、Fedora等基于Red Hat的Linux发行版，可以使用以下命令来查看软件包的安装方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qi &lt;package_name&gt; | grep &quot;Source RPM&quot;</span><br></pre></td></tr></table></figure>
+<p>如果输出结果中包含Source RPM，则表示该软件包是通过源码编译安装的；否则，该软件包是通过yum或dnf等工具安装的。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(base) user@user-Super-Server:~$ dpkg -s ssh | grep &quot;Source:&quot;</span><br><span class="line">Source: openssh</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="clfgq642e0000rgwr4ol477ro" data-title="windows常见问题汇总" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/09/05/linux%E5%BC%80%E5%8F%91/" data-id="clol3pwlw0000e4wr100a6dm3" data-title="linux开发" class="article-share-link">分享</a>
       
       
       
@@ -145,19 +132,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          github ssh链接失效修复记录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/02/24/%E7%AA%81%E5%87%BB%E5%A4%8D%E4%B9%A0%E6%84%9F%E6%82%9F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/07/05/allbumentation/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">突击复习感悟</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
