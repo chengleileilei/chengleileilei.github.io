@@ -81,176 +81,42 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-测验1解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-使用python解压rar和zip压缩包（windows）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" class="article-date">
-  <time class="dt-published" datetime="2022-10-28T11:54:45.128Z" itemprop="datePublished">2022-10-28</time>
+    <a href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2022-11-15T07:14:17.000Z" itemprop="datePublished">2022-11-15</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/">使用python解压rar和zip压缩包（windows）</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p><strong>线性变换：</strong></p>
-<ol>
-<li>数值意义上，变换即函数，线性变换就是一阶导数为常数的函数</li>
-<li>几何意义上，线性变换表示的是直线的特性，符合两个性质：<strong>变换前后零点不变，变换前后直线还是直线</strong>。将空间中的向量围绕零点进行旋转伸缩，但不能将其弯曲，否则则是非线性变化。</li>
-</ol>
+        <h3 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h3><ul>
+<li><p>解压rar文件需要下载一些本地依赖</p>
 </li>
-<li><p>欠拟合：欠拟合是指模型拟合程度不高，数据距离拟合曲线较远，或指模型没有很好地捕捉到数据特征，不能够很好地拟合数据。</p>
-<ol>
-<li>增加新特征，可以考虑加入进特征组合、高次特征，来增大假设空间；</li>
-<li>添加多项式特征，这个在机器学习算法里面用的很普遍，例如将线性模型通过添加二次项或者三次项使模型泛化能力更强；</li>
-<li>减少正则化参数，正则化的目的是用来防止过拟合的，但是模型出现了欠拟合，则需要减少正则化参数；</li>
-<li>使用非线性模型，比如核SVM 、决策树、深度学习等模型；</li>
-<li>调整模型的容量(capacity)，通俗地，模型的容量是指其拟合各种函数的能力；</li>
-<li>容量低的模型可能很难拟合训练集；使用集成学习方法，如Bagging ,将多个弱学习器Bagging。</li>
-</ol>
+<li><p>解压zip文件可能遇到乱码问题，在zipfile模块中把编码部分修改下即可</p>
 </li>
-<li><p>AUC <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48168711">https://zhuanlan.zhihu.com/p/48168711</a></p>
-<ol>
-<li><p>题解：</p>
-<ul>
-<li><p>关于性能度量标准ROC与AUC,下列说法不正确的是 （A）<strong>使用排除法</strong></p>
-<p>A．均等代价下,ROC曲线不能直接反映出学习器的期望总体代价：<strong>ROC评估的就是均等代价下学习器的性能（期望总体代价），非均等代价需要引入代价曲线</strong></p>
-<p>B．若某个学习器的ROC曲线被另一个学习器的曲线“包住”,则后者性能优于前者：<strong>横轴相等时，外圈真正例率更高，所以外圈曲线更优</strong></p>
-<p>C．如果ROC曲线交叉,可以根据ROC曲线下面积大小进行比较,也即AUC值.：<strong>ROC不是一个数值，因此可以根据面积大小比较不同分类器的性能，即AUC</strong></p>
-<p>D．AUC衡量了样本预测的排序质量：<strong>AUC另一个计算方法：所有样本按 Score 值排序后，在样本集中随机抽取 1 个正类样本和 1 个负类样本，AUC 值指出了所抽取的正类样本能排在所抽取的负类样本之前的概率。</strong></p>
+<li><p>具体方法可在网络找到。</p>
 </li>
 </ul>
-</li>
-<li><p>ROC曲线：</p>
-<ol>
-<li><p>横轴：假正例率，在所有负例当中， 错误的判断为正例所占的比例。<strong>越小越好</strong></p>
-</li>
-<li><p>纵轴：真正利率，也就是在所有正例当中，正确判断为正例的占的比例，实际就是精度。<strong>越大越好</strong></p>
-</li>
-<li><p>|      |      | 预测 | 预测 |                            |<br>| :—: | :—: | :—: | :—: | ————————————— |<br>|      |      |  1   |  0   |                            |<br>| 标签 |  1   |  TP  |  FN  | 真正利率：TPR =TP/(TP+FN)  |<br>| 标签 |  0   |  FP  |  TN  | 假正例率：FPR = FP/(TP+FN) |</p>
-</li>
-</ol>
-</li>
-<li><p>AUC：roc曲线下的面积</p>
-<ol>
-<li>Fawcett, 2006 ：所有样本按 Score 值排序后，在样本集中随机抽取 1 个正类样本和 1 个负类样本，<strong>AUC 值指出了所抽取的正类样本能排在所抽取的负类样本之前的概率。</strong></li>
-</ol>
-</li>
-<li><p>代价曲线：</p>
-<ol>
-<li>ROC 乃至最后计算 AUC 的整个过程中，假 1（FP）和假 0（FN）皆被同等对待（<strong>均等代价</strong>），但实际情况下FP 和 FN 的后果是不一样的（<strong>非均等代价</strong>）</li>
-<li>目的：对于一个模型，根据p不同，找到使得代价总期望最小的模型的阈值</li>
-<li>明确参数 : p=m+/m</li>
-<li>横轴：归一化的正概率代价期望<ol>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/webp.webp" alt="img"></li>
-</ol>
-</li>
-<li>纵轴：归一化的总代价期望<ol>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/webp-16669420663537.webp" alt="img"></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p><strong>方差偏差</strong></p>
-<ol>
-<li><p>6.关于偏差和方差,下列说法正确的是（D）</p>
-<p>A．方差度量了学习算法期望预测与真实结果的偏离程度：<strong>偏差</strong></p>
-<p>B．偏差度量了同样大小训练集的变动所导致的学习性能的变化：<strong>方差</strong></p>
-<p>C．噪声表达了在当前任务上任何学习算法所能达到的期望泛化误差的上界：<strong>下届</strong></p>
-<p>D．一般来说,偏差与方差是有冲突的</p>
-</li>
-</ol>
-</li>
-<li><ul>
-<li>方差：<strong>不同的训练数据集训练出的模型</strong>输出值之间的差异。（预测值离散程度）。<strong>刻画的是数据扰动对模型的影响。</strong></li>
-<li>偏差：<strong>预测值与真实值之间的差值，是衡量预测值与真实值的关系。</strong>用所有可能的训练数据集训练出的所有模型的输出的平均值与真实模型的输出值之间的差异。<strong>刻画了学习算法本身的拟合能力。</strong><ul>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160350864.png" alt="image-20221028160350864"></li>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160341932.png" alt="image-20221028160341932"></li>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/image-20221028160404859.png" alt="image-20221028160404859"></li>
-</ul>
-</li>
-<li><strong>噪声(Noise)</strong>是当前学习任务上任何学习算法所能达到的期望泛化误差的下界，即表示了任务本身的难度(任何算法误差都不可能低于该噪声值)。<ul>
-<li>​    泛化误差可以分解为偏差、方差和噪声之和。</li>
-</ul>
-</li>
-<li><strong>偏差-方差窘境</strong><ul>
-<li>一般来说，偏差与方差是有冲突的，称为<strong>偏差-方差窘境</strong>。</li>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDM2NzMwNw==,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></li>
-<li>在训练不足时，学习器拟合能力不强，<strong>训练数据的扰动不足以使学习器的拟合能力产生显著变化，此时偏差主导泛化错误率</strong>；</li>
-<li>训练充足后，<strong>学习器的拟合能力非常强，训练数据的轻微扰动都会导致学习器的显著变化，方差主导泛化误差。</strong>（若训练数据自身非全局特性被学到则会发生过拟合。）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li><p>对数几率回归用于二分类</p>
-</li>
-<li><p>对于非凸函数（深层神经网络），梯度优化找到的是局部极小值。（好在实践应用中，通过梯度下降法找到的局部最小值，大部分情况下已经可以满足我们的应用需求，并且有时候为了得到更好的结果，用随机初始化训练多次得到多个局部最小值进行比较得到更优的结果。）</p>
-</li>
-<li><p>参考题目6，深度为4的决策树的拟合能力大于深度为2的决策树(训练充足)，因此<code>var(T1) &lt; var(T2)</code>，<code>bias(T1)&gt;bias(T2)</code></p>
-<ul>
-<li>拟合能力强，方差大，</li>
-<li>拟合能力弱，偏差大</li>
-</ul>
-</li>
-<li><p>决策树确保每个叶子节点为纯类会增加过拟合</p>
-</li>
-<li><p>训练集好，验证集差，考虑出现过拟合</p>
-<ul>
-<li>决策树高度过高才会出现过拟合</li>
-<li>随机森林树的数量过多会抵消随机性的引入，最后的模型会是一个过拟合的模型，其泛化性能也会降低。</li>
-</ul>
-</li>
-<li><p>adaboost</p>
-<ul>
-<li><p>先通过对N个训练样本的学习得到第一个弱分类器；</p>
-</li>
-<li><p>将分错的样本和其他的新数据一起构成一个新的N个的训练样本，通过对这个样本的学习得到第二个弱分类器 ；</p>
-</li>
-<li><p>将1和2都分错了的样本加上其他的新样本构成另一个新的N个的训练样本，通过对这个样本的学习得到第三个弱分类器；</p>
-</li>
-<li><p>最终经过提升的强分类器。即某个数据被分为哪一类要由各分类器权值决定。</p>
-</li>
-</ul>
-</li>
-<li><p>单层感知机无法解决异或问题</p>
-</li>
-<li><p>误差逆传播以目标的梯度<strong>负方向</strong>对参数进行调整</p>
-</li>
-<li><p>Python异常处理结构可以用来捕获程序中的异常，但是并不是所有的异常都可以被捕获。例如，当程序出现语法错误时，就无法通过异常处理结构来捕获这种异常。因此，选项A是错误的 。</p>
-</li>
-<li><p>使用验证集调整超参数</p>
-</li>
-<li><p>会存在无用特征</p>
-</li>
-<li><p>正则化</p>
-<ol>
-<li>L1正则化，又叫Lasso Regression，L1是向量各元素的绝对值之和<ol>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/v2-8438d4ae3f5c6b2c44cb9fad48e0bee1_1440w.png" alt="img"></li>
-</ol>
-</li>
-<li>L2正则化，又叫Ridge Regression，L2是向量各元素的平方和，然后再求平方根<ol>
-<li><img src="/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/v2-77cc38baccab285eb7d24417e8f2707e_1440w.png" alt="img"></li>
-</ol>
-</li>
-<li>L1正则化可以产生稀疏权值矩阵，即产生一个稀疏模型，用于特征选择。</li>
-<li>L2正则化可以产生参数值较小的模型，能适应不同的数据集，一定程度上防止过拟合，抗扰动能力强。</li>
-<li>L2让所有特征的系数都缩小，但是不会减为0，它会使优化求解稳定快速。所以L2适用于特征之间没有关联的情况。</li>
-</ol>
-</li>
-<li><p>激活函数 tanh值域为[-1，1]。</p>
-</li>
-</ol>
-<p>​    </p>
+<h3 id="2-python脚本"><a href="#2-python脚本" class="headerlink" title="2. python脚本"></a>2. python脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os,zipfile</span><br><span class="line"><span class="keyword">from</span> unrar <span class="keyword">import</span> rarfile</span><br><span class="line">root_path = os.path.abspath(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(root_path)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unrar_file</span>(<span class="params">rar_src,dst_dir</span>):</span></span><br><span class="line">    rf = rarfile.RarFile(rar_src)</span><br><span class="line">    rf.extractall(dst_dir)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unzip_file</span>(<span class="params">zip_src, dst_dir</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    解压缩</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    r = zipfile.is_zipfile(zip_src)</span><br><span class="line">    <span class="keyword">if</span> r:</span><br><span class="line">        fz = zipfile.ZipFile(zip_src, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> fz.namelist():</span><br><span class="line">            fz.extract(file, dst_dir)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;This is not zip&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">path = <span class="string">&#x27;./&#x27;</span></span><br><span class="line">res = os.walk(path)</span><br><span class="line"></span><br><span class="line">path = root_path</span><br><span class="line">res = os.listdir(path)</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> res:</span><br><span class="line">    <span class="keyword">if</span> os.path.isdir(file):</span><br><span class="line">        num += <span class="number">1</span></span><br><span class="line">        stu_path = os.path.join(root_path,file)</span><br><span class="line">        <span class="keyword">for</span> stu_file <span class="keyword">in</span> os.listdir(stu_path):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(stu_file)&gt;<span class="number">4</span> <span class="keyword">and</span> stu_file[-<span class="number">4</span>:] == <span class="string">&#x27;.zip&#x27;</span>:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="built_in">print</span>(stu_file) </span><br><span class="line">                    zip_src = os.path.join(stu_path,stu_file)</span><br><span class="line">                    unzip_file(zip_src,stu_path)</span><br><span class="line">                <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;can not unzip &quot;</span>,stu_file)</span><br><span class="line">                    <span class="built_in">print</span>(e)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(stu_file)&gt;<span class="number">4</span> <span class="keyword">and</span> stu_file[-<span class="number">4</span>:] == <span class="string">&#x27;.rar&#x27;</span>:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="built_in">print</span>(stu_file)</span><br><span class="line">                    rar_src = os.path.join(stu_path,stu_file)</span><br><span class="line">                    unrar_file(rar_src,stu_path)</span><br><span class="line">                <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;can not unrar &quot;</span>,stu_file)</span><br><span class="line">                    <span class="built_in">print</span>(e)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;学生数量：&#x27;</span>,num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/28/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" data-id="cl9sft8v70001lowr5ngabo21" data-title="" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/11/15/%E4%BD%BF%E7%94%A8python%E8%A7%A3%E5%8E%8Brar%E5%92%8Czip%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%88windows%EF%BC%89/" data-id="clal01etd0000vgwr4h5rgxvm" data-title="使用python解压rar和zip压缩包（windows）" class="article-share-link">分享</a>
       
       
       
@@ -785,6 +651,10 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
       <ul>
         
           <li>
+            <a href="/2023/09/14/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2023/09/05/linux%E5%BC%80%E5%8F%91/">linux开发</a>
           </li>
         
@@ -798,10 +668,6 @@ I(u)=N(u)\cup\{u\}</script><p><img src="/2022/10/18/paperReading/image-202210180
         
           <li>
             <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/">github ssh链接失效修复记录</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/20/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">windows常见问题汇总</a>
           </li>
         
       </ul>
