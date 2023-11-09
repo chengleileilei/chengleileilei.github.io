@@ -111,10 +111,10 @@
 </ol>
 </li>
 <li><p>关于性能度量标准ROC与AUC,下列说法不正确的是 （A）<strong>使用排除法</strong></p>
-<p>A．均等代价下,ROC曲线不能直接反映出学习器的期望总体代价：<strong>ROC评估的就是均等代价下学习器的性能（期望总体代价），非均等代价需要引入代价曲线</strong></p>
-<p>B．若某个学习器的ROC曲线被另一个学习器的曲线“包住”,则后者性能优于前者：<strong>横轴相等时，外圈真正例率更高，所以外圈曲线更优</strong></p>
-<p>C．如果ROC曲线交叉,可以根据ROC曲线下面积大小进行比较,也即AUC值.：<strong>ROC不是一个数值，因此可以根据面积大小比较不同分类器的性能，即AUC</strong></p>
-<p>D．AUC衡量了样本预测的排序质量：<strong>AUC另一个计算方法：所有样本按 Score 值排序后，在样本集中随机抽取 1 个正类样本和 1 个负类样本，AUC 值指出了所抽取的正类样本能排在所抽取的负类样本之前的概率。</strong></p>
+<p>   A．均等代价下,ROC曲线不能直接反映出学习器的期望总体代价：<strong>ROC评估的就是均等代价下学习器的性能（期望总体代价），非均等代价需要引入代价曲线</strong></p>
+<p>   B．若某个学习器的ROC曲线被另一个学习器的曲线“包住”,则后者性能优于前者：<strong>横轴相等时，外圈真正例率更高，所以外圈曲线更优</strong></p>
+<p>   C．如果ROC曲线交叉,可以根据ROC曲线下面积大小进行比较,也即AUC值.：<strong>ROC不是一个数值，因此可以根据面积大小比较不同分类器的性能，即AUC</strong></p>
+<p>   D．AUC衡量了样本预测的排序质量：<strong>AUC另一个计算方法：所有样本按 Score 值排序后，在样本集中随机抽取 1 个正类样本和 1 个负类样本，AUC 值指出了所抽取的正类样本能排在所抽取的负类样本之前的概率。</strong></p>
 <ol>
 <li><p>ROC曲线： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48168711">https://zhuanlan.zhihu.com/p/48168711</a></p>
 <ul>
@@ -122,7 +122,7 @@
 </li>
 <li><p>纵轴：真正利率，也就是在所有正例当中，正确判断为正例的占的比例，实际就是精度。<strong>越大越好</strong></p>
 </li>
-<li><p>|      |      | 预测 | 预测 |                            |<br> | :—: | :—: | :—: | :—: | ————————————— |<br> |      |      |  1   |  0   |                            |<br> | 标签 |  1   |  TP  |  FN  | 真正利率：TPR =TP/(TP+FN)  |<br> | 标签 |  0   |  FP  |  TN  | 假正例率：FPR = FP/(TP+FN) |</p>
+<li><p>|      |      | 预测 | 预测 |                            |<br>| :—: | :—: | :—: | :—: | ————————————— |<br>|      |      |  1   |  0   |                            |<br>| 标签 |  1   |  TP  |  FN  | 真正利率：TPR =TP/(TP+FN)  |<br>| 标签 |  0   |  FP  |  TN  | 假正例率：FPR = FP/(TP+FN) |</p>
 </li>
 </ul>
 </li>
@@ -133,13 +133,18 @@
 </li>
 <li><p>代价曲线：</p>
 <ul>
-<li>ROC 乃至最后计算 AUC 的整个过程中，假 1（FP）和假 0（FN）皆被同等对待（<strong>均等代价</strong>），但实际情况下FP 和 FN 的后果是不一样的（<strong>非均等代价</strong>）</li>
-<li>目的：对于一个模型，根据p不同，找到使得代价总期望最小的模型的阈值</li>
-<li>明确参数 : p=m+/m</li>
-<li>横轴：归一化的正概率代价期望<script type="math/tex; mode=display">
- P(+)cost=\frac{p\times cost_{01}}{p\times cost_{01}+(1-p)\times cost_{10}}</script></li>
-<li>纵轴：归一化的总代价期望<script type="math/tex; mode=display">
- cost_{norm}=\frac{\text{FNR}\times p\times cost_{01}+\text{FPR}\times(1-p)\times cost_{10}}{p\times cost_{01}+(1-p)\times cost_{10}}</script></li>
+<li><p>ROC 乃至最后计算 AUC 的整个过程中，假 1（FP）和假 0（FN）皆被同等对待（<strong>均等代价</strong>），但实际情况下FP 和 FN 的后果是不一样的（<strong>非均等代价</strong>）</p>
+</li>
+<li><p>目的：对于一个模型，根据p不同，找到使得代价总期望最小的模型的阈值</p>
+</li>
+<li><p>明确参数 : p=m+/m</p>
+</li>
+<li><p>横轴：归一化的正概率代价期望</p>
+<script type="math/tex; mode=display">
+P(+)cost=\frac{p\times cost_{01}}{p\times cost_{01}+(1-p)\times cost_{10}}</script></li>
+<li><p>纵轴：归一化的总代价期望</p>
+<script type="math/tex; mode=display">
+cost_{norm}=\frac{\text{FNR}\times p\times cost_{01}+\text{FPR}\times(1-p)\times cost_{10}}{p\times cost_{01}+(1-p)\times cost_{10}}</script></li>
 </ul>
 </li>
 </ol>
@@ -154,8 +159,9 @@
 </li>
 </ol>
 <ul>
-<li>方差：<strong>不同的训练数据集训练出的模型</strong>输出值之间的差异。（预测值离散程度）。<strong>刻画的是数据扰动对模型的影响。</strong></li>
-<li><p>偏差：<strong>预测值与真实值之间的差值，是衡量预测值与真实值的关系。</strong>用所有可能的训练数据集训练出的所有模型的输出的平均值与真实模型的输出值之间的差异。<strong>刻画了学习算法本身的拟合能力。</strong></p>
+<li><p>方差：<strong>不同的训练数据集训练出的模型</strong>输出值之间的差异。（预测值离散程度）。<strong>刻画的是数据扰动对模型的影响。高方差表示模型过拟合。</strong></p>
+</li>
+<li><p>偏差：<strong>预测值与真实值之间的差值，是衡量预测值与真实值的关系。</strong>用所有可能的训练数据集训练出的所有模型的输出的平均值与真实模型的输出值之间的差异。<strong>刻画了学习算法本身的拟合能力。</strong> <strong>高偏差表明模型欠拟合</strong></p>
 <script type="math/tex; mode=display">
 \bar{f}(\boldsymbol{x})=\mathbb{E}_D[f(\boldsymbol{x};D)]</script><script type="math/tex; mode=display">
 var(\boldsymbol{x})=\mathbb{E}_D\left[\left(f\left(\boldsymbol{x};D\right)-\bar{f}\left(\boldsymbol{x}\right)\right)^2\right]</script><script type="math/tex; mode=display">
@@ -175,8 +181,6 @@ bias^2(\boldsymbol{x})=\left(\bar{f}\left(\boldsymbol{x}\right)-y\right)^2</scri
 </li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p>对数几率回归用于二分类</p>
 </li>
 <li><p>对于非凸函数（深层神经网络），梯度优化找到的是局部极小值。（好在实践应用中，通过梯度下降法找到的局部最小值，大部分情况下已经可以满足我们的应用需求，并且有时候为了得到更好的结果，用随机初始化训练多次得到多个局部最小值进行比较得到更优的结果。）</p>
@@ -192,10 +196,10 @@ bias^2(\boldsymbol{x})=\left(\bar{f}\left(\boldsymbol{x}\right)-y\right)^2</scri
 <li><p>决策树确保每个叶子节点为纯类会增加过拟合</p>
 </li>
 <li><p>你刚刚训练完一个垃圾邮件分类的随机森林,它在验证集上表现异常糟糕,但在训练集上表现良好。假设实现没有错误,以下哪个原因不会导致这个问题?（A）</p>
-<p>A．决策树高度过小</p>
-<p>B．在选择分割时随机采样了过多的特征</p>
-<p>C．森林中的树太少</p>
-<p>训练集好，验证集差，考虑出现过拟合</p>
+<p>   A．决策树高度过小</p>
+<p>   B．在选择分割时随机采样了过多的特征</p>
+<p>   C．森林中的树太少</p>
+<p>   训练集好，验证集差，考虑出现过拟合</p>
 <ul>
 <li>决策树高度过高才会出现过拟合</li>
 <li>随机森林树的数量过多会抵消随机性的引入，最后的模型会是一个过拟合的模型，其泛化性能也会降低。</li>
@@ -218,25 +222,27 @@ bias^2(\boldsymbol{x})=\left(\bar{f}\left(\boldsymbol{x}\right)-y\right)^2</scri
 <li><p>误差逆传播以目标的梯度<strong>负方向</strong>对参数进行调整</p>
 </li>
 <li><p>关于数据集拆分方法，下列说法不正确的是（D）</p>
-<p>A. 留出法要求训练/测试集划分要尽可能保持数据分布的一致性</p>
-<p>B. 留一法不受随机样本划分方式的影响：<strong>每次使用 m-1 个样例进行训练，只用1 个样例进行测试</strong></p>
-<p>C. 自助法在数据集较小、难以有效划分训练/测试集时很有用：<strong>自助法则是使用有放回重复采样 的方式进行数据采样</strong></p>
-<p>D. 交叉验证法改变了初始数据集的分布，这会引入估计偏差：<strong>自助法改变了数据的初始分布导致会引入估计偏差</strong></p>
+<p>   A. 留出法要求训练/测试集划分要尽可能保持数据分布的一致性</p>
+<p>   B. 留一法不受随机样本划分方式的影响：<strong>每次使用 m-1 个样例进行训练，只用1 个样例进行测试</strong></p>
+<p>   C. 自助法在数据集较小、难以有效划分训练/测试集时很有用：<strong>自助法则是使用有放回重复采样 的方式进行数据采样</strong></p>
+<p>   D. 交叉验证法改变了初始数据集的分布，这会引入估计偏差：<strong>自助法改变了数据的初始分布导致会引入估计偏差</strong></p>
 </li>
 <li><p>下列关于线性判别分析的说法错误的是（D）</p>
-<p>A. 欲使同类样例的投影点尽可能接近，可以让同类样例投影点的协方差尽可能小</p>
-<p>B. 欲使异类样例的投影点尽可能远离，可以让类中心之间的距离尽可能大</p>
-<p>C. 线性判别分析可以用来处理二分类问题</p>
-<p>D. 线性判别分析可以视为一种无监督降维技术：<strong>有监督降维技术</strong></p>
+<p>   A. 欲使同类样例的投影点尽可能接近，可以让同类样例投影点的协方差尽可能小</p>
+<p>   B. 欲使异类样例的投影点尽可能远离，可以让类中心之间的距离尽可能大</p>
+<p>   C. 线性判别分析可以用来处理二分类问题</p>
+<p>   D. 线性判别分析可以视为一种无监督降维技术：<strong>有监督降维技术</strong></p>
 </li>
 </ol>
 <h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><ol>
-<li>使用验证集调整超参数</li>
+<li><p>使用验证集调整超参数</p>
+</li>
 <li><p>会存在无用特征</p>
 </li>
 <li><p>正则化</p>
 <ul>
-<li><p>L1正则化，又叫Lasso Regression，L1是向量各元素的绝对值之和</p>
+<li>L1正则化，又叫Lasso Regression，L1是向量各元素的绝对值之和</li>
+</ul>
 <script type="math/tex; mode=display">
 min_w\frac{1}{2n_{samples}}||Xw-y||_2^2+\alpha||w||_1</script><ul>
 <li>L2正则化，又叫Ridge Regression，L2是向量各元素的平方和，然后再求平方根</li>
@@ -248,8 +254,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
 <li><p>L2正则化可以产生参数值较小的模型，能适应不同的数据集，一定程度上防止过拟合，抗扰动能力强。</p>
 </li>
 <li><p>L2让所有特征的系数都缩小，但是不会减为0，它会使优化求解稳定快速。所以L2适用于特征之间没有关联的情况。</p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
