@@ -81,6 +81,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-外设" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/10/%E5%A4%96%E8%AE%BE/" class="article-date">
+  <time class="dt-published" datetime="2023-11-10T08:57:15.000Z" itemprop="datePublished">2023-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/11/10/%E5%A4%96%E8%AE%BE/">外设</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h1><h2 id="Guss-GS87D"><a href="#Guss-GS87D" class="headerlink" title="Guss GS87D"></a>Guss GS87D</h2><h3 id="设备切换："><a href="#设备切换：" class="headerlink" title="设备切换："></a>设备切换：</h3><ul>
+<li><code>fn+q</code>:设备1-yoga14s</li>
+<li><code>fn+w</code>:设备2-oneplus8<h3 id="设备配对"><a href="#设备配对" class="headerlink" title="设备配对"></a>设备配对</h3></li>
+<li>先<code>fn+q/w/e</code>切换到对应连接设备,指示灯常亮后熄灭</li>
+<li>长按<code>fn+p</code>直至指示灯闪烁，进入对应设备蓝牙界面连接，连接成功后指示灯停止闪烁</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/10/%E5%A4%96%E8%AE%BE/" data-id="close39pg0000p4wr86obh2uv" data-title="外设" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-测验1解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/09/14/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" class="article-date">
@@ -1280,69 +1324,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
 
 
   
-    <article id="post-CFR-f" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/05/CFR-f/" class="article-date">
-  <time class="dt-published" datetime="2023-02-05T00:40:02.000Z" itemprop="datePublished">2023-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/05/CFR-f/">Collaborative filtering recommendation using fusing criteria against shilling attacks</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Collaborative-filtering-recommendation-using-fusing-criteria-against-shilling-attacks"><a href="#Collaborative-filtering-recommendation-using-fusing-criteria-against-shilling-attacks" class="headerlink" title="Collaborative filtering recommendation using fusing criteria against shilling attacks"></a>Collaborative filtering recommendation using fusing criteria against shilling attacks</h1><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>connection science 2021 <strong>（CCF C类期刊）</strong></p>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>推荐系统存在shilling attack ，即在共现矩阵中恶意添加虚假用户数据。</p>
-<p>多数shilling attack攻击方法单，因此提出CFR-F，融合多个标准进行协同过滤推荐。</p>
-<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><ol>
-<li>根据<strong>用户社交标签</strong>和<strong>交互评分</strong>数据获取相似用户集合</li>
-<li>结合<strong>用户属性</strong>推荐相似的用户集中的item</li>
-</ol>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
-<li>用户相似性计算：<ul>
-<li>$\alpha<em>$标签相似性（余弦）+$\beta</em>$共现矩阵相似性（杰卡德），构建top K相似用户集</li>
-<li>计算用户属性相似度$W_{a,b}$ </li>
-</ul>
-</li>
-<li>评分预测：<ul>
-<li>对相似用户集内的所有item计算评分</li>
-</ul>
-</li>
-</ul>
-<p><img src="/2023/02/05/CFR-f/image-20230204224120608.png" alt="image-20230204224120608"></p>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>CFR-T：传统协同过滤</p>
-<p>CFR-B：使用用户属性</p>
-<p>CFR-S：使用标签</p>
-<p>CFR-F：同时使用用户属性和标签</p>
-<p><img src="/2023/02/05/CFR-f/image-20230205114744307.png" alt="image-20230205114744307" style="zoom:50%;"></p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>非常简单的一篇文章，融合多个特征进行用户相似性计算，在一定程度上能够防御shilling attack。<strong>借鉴意义不大。</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/05/CFR-f/" data-id="cldqut3ry0000qkwr96wp6bf5" data-title="Collaborative filtering recommendation using fusing criteria against shilling attacks" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1366,7 +1347,7 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -1377,6 +1358,10 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/11/10/%E5%A4%96%E8%AE%BE/">外设</a>
+          </li>
         
           <li>
             <a href="/2023/09/14/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">(no title)</a>
@@ -1392,10 +1377,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
         
           <li>
             <a href="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/">Denoised Self-Augmented Learning for Social Recommendation</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/13/github-ssh%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/">github ssh链接失效修复记录</a>
           </li>
         
       </ul>
