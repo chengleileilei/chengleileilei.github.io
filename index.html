@@ -81,6 +81,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-algrithm/kmp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/algrithm/kmp/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T08:24:47.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/algrithm/kmp/">kmp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/algrithm/kmp/" data-id="cltttr5aa00001owre0ao074p" data-title="kmp" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-外设" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/11/10/%E5%A4%96%E8%AE%BE/" class="article-date">
@@ -359,6 +397,21 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qi &lt;package_name&gt; | grep &quot;Source RPM&quot;</span><br></pre></td></tr></table></figure>
 <p>如果输出结果中包含Source RPM，则表示该软件包是通过源码编译安装的；否则，该软件包是通过yum或dnf等工具安装的。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(base) user@user-Super-Server:~$ dpkg -s ssh | grep &quot;Source:&quot;</span><br><span class="line">Source: openssh</span><br></pre></td></tr></table></figure>
+<h2 id="添加新用户"><a href="#添加新用户" class="headerlink" title="添加新用户"></a>添加新用户</h2><ol>
+<li>打开终端并输入以下命令以创建新用户：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser guanan</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>输入新用户的密码并按照提示输入其他信息。如果您不想输入其他信息，可以直接按回车键跳过。</p>
+</li>
+<li><p>确认新用户已成功创建后，将其添加到sudo组以授予其超级权限：</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG sudo guanan</span><br></pre></td></tr></table></figure>
+<ol>
+<li>现在，您可以使用以下命令切换到新用户：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - guanan</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -1261,72 +1314,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
 
 
   
-    <article id="post-python开发指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="article-date">
-  <time class="dt-published" datetime="2023-02-10T03:09:25.000Z" itemprop="datePublished">2023-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">python开发指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="python函数内置方法"><a href="#python函数内置方法" class="headerlink" title="python函数内置方法"></a>python函数内置方法</h2><p>python函数定义时<strong>必须将有默认值参数写在最后</strong></p>
-<h4 id="获取函数参数的方法"><a href="#获取函数参数的方法" class="headerlink" title="获取函数参数的方法"></a>获取函数参数的方法</h4><ul>
-<li><p>获取函数参数数量</p>
-<ul>
-<li>```python<br>fun<em>name.<em>_code</em></em>.co_argcount<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取函数全部参数</span><br><span class="line"></span><br><span class="line">- - &#96;&#96;&#96;python</span><br><span class="line">    fun_name.__code__.co_varnames</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>获取函数参数默认值</p>
-<ul>
-<li>```python<br>fun<em>name.<em>_defaults</em></em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 获取函数注释</span><br><span class="line"></span><br><span class="line">  - &#96;&#96;&#96;python</span><br><span class="line">    fun_name.__doc__</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><ul>
-<li>输出类内所有属性和对应取值</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span> (<span class="params">self, name, price</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.price = price</span><br><span class="line">im = Item(<span class="string">&#x27;无线&#x27;</span>, <span class="number">259</span>)</span><br><span class="line"><span class="built_in">print</span>(im.__dict__)</span><br><span class="line"><span class="built_in">print</span>(im.__dict__[<span class="string">&#x27;name&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>python类私有属性中的<strong>dict</strong>属性内保存的就是python所有的属性名及其对应的值</p>
-<p>在这个字典之中保存的是python类属性本身，也就是它实际上的内存地址对象。对这个python类属性字典进修改之后，类之中属性的值也会发生相应的改变</p>
-</blockquote>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(file, mode, encoding)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>默认<code>mode=&quot;r&quot;</code></li>
-</ul>
-<p><img src="/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/7949193859b146b790c1acf5561bb543.png" alt="mode说明"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/10/python%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" data-id="cldy3x899000034wr2ssw14fr" data-title="python开发指南" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1350,7 +1337,7 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -1361,6 +1348,10 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/03/16/algrithm/kmp/">kmp</a>
+          </li>
         
           <li>
             <a href="/2023/11/10/%E5%A4%96%E8%AE%BE/">外设</a>
@@ -1378,10 +1369,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
             <a href="/2023/07/05/allbumentation/">(no title)</a>
           </li>
         
-          <li>
-            <a href="/2023/05/28/%E2%80%9CDenoised%20Self-Augmented%20Learning%20for%20Social%20Recommendation%E2%80%9D/">Denoised Self-Augmented Learning for Social Recommendation</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1395,7 +1382,7 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 Cheng<br>
+      &copy; 2024 Cheng<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
