@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>虚假用户检测工作相关论文 | HAPPY SUMMER VACTION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="虚假用户检测工作相关论文GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection问题背景：推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚假用户检测工作相关论文">
+<meta property="og:url" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/index.html">
+<meta property="og:site_name" content="HAPPY SUMMER VACTION">
+<meta property="og:description" content="虚假用户检测工作相关论文GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection问题背景：推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221017152707559.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010548570.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010905809.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005410401.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005444912.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005217562.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005251528.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005531417.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005556064.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010758593.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011112165.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011140145.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011207083.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018013527840.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018014052533.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018020904856.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018020958467.png">
+<meta property="og:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018021110587.png">
+<meta property="article:published_time" content="2023-11-10T08:57:15.000Z">
+<meta property="article:modified_time" content="2024-03-16T09:06:05.177Z">
+<meta property="article:author" content="Cheng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221017152707559.png">
+  
+    <link rel="alternate" href="/atom.xml" title="HAPPY SUMMER VACTION" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">HAPPY SUMMER VACTION</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-科研/paperReading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/" class="article-date">
+  <time class="dt-published" datetime="2023-11-10T08:57:15.000Z" itemprop="datePublished">2023-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      虚假用户检测工作相关论文
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="虚假用户检测工作相关论文"><a href="#虚假用户检测工作相关论文" class="headerlink" title="虚假用户检测工作相关论文"></a>虚假用户检测工作相关论文</h1><h2 id="GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection"><a href="#GCN-Based-User-Representation-Learning-for-Unifying-Robust-Recommendation-and-Fraudster-Detection" class="headerlink" title="GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection"></a>GCN-Based User Representation Learning for Unifying Robust Recommendation and Fraudster Detection</h2><p><strong>问题背景：</strong>推荐系统的一个默认假设：交互数据能够真实反应用户的兴趣和偏好。但是恶意用户会为推荐系统插入虚假反馈破环假设，减低推荐模型性能。因此需要构建鲁棒性的推荐系统模型（能够识别欺诈者，修正用户数据在模型中的权重）</p>
+<p>test:</p>
+<script type="math/tex; mode=display">
+f(x)=sin(x)/\sigma</script><p><strong>前人相关工作：</strong></p>
+<ul>
+<li>提升推荐系统鲁棒性：在矩阵分解优化函数中添加m估计量</li>
+<li>欺诈者检测并删除欺诈者：过程容易出错，将正常用户识别为欺诈者</li>
+</ul>
+<p><strong>主要工作：</strong></p>
+<ul>
+<li>提出基于GCN的表示学习框架GraphRfi用于鲁棒推荐（评分预测任务）和欺诈者检测（分类任务），两个任务在训练中相互增强。<ul>
+<li>欺诈者概率用于评判用户数据对评分预测任务的重要性</li>
+<li>评分预测的误差用于欺诈者检测特征（从认知心理学的角度来看，一个正常用户的行为应该是一致和可预测的[46]。因此，如果一个用户的明显评分与一个精确的推荐模型所预测的评分有很大偏差，那么这个用户最有可能是一个骗子。）</li>
+</ul>
+</li>
+</ul>
+<p><strong>本文工作的优势：</strong></p>
+<ul>
+<li>将两个工作结合，充分利用用户可靠特征（用户正负评价分布、用户评价数量等评分统计信息）进行模型训练。</li>
+<li>端到端模型，欺诈者检测和评分任务相互耦合</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221017152707559.png" alt="image-20221017152707559" style="zoom: 50%;"></p>
+<h3 id="GCN-based-Rating-Prediction-Component"><a href="#GCN-based-Rating-Prediction-Component" class="headerlink" title="GCN-based Rating Prediction Component"></a><strong>GCN-based Rating Prediction Component</strong></h3><p>图结构：有向二分图</p>
+<p><strong>任务1：利用多源数据（user_rating、user_features）进行用户嵌入表示</strong></p>
+<p>$z_u$表示user embedding ，且$z_u^0=\pmb{x_u}$</p>
+<p>$z_v$表示item embedding，$z_v^0$随机初始化</p>
+<p>网络迭代过程是一个信息传递的过程（图卷积迭代）</p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010548570.png" alt="image-20221018010548570" style="zoom:50%;"></p>
+<p>$e_r$为评分r的embedding（评分就是1到5）</p>
+<p>$h_v$表示从item $v\in{N(u)}$节点传递过来的信息，$N(u)$表示用户u交互过的v的集合</p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010905809.png" alt="image-20221018010905809" style="zoom:50%;"></p>
+<ul>
+<li>更新$z_u$，通过注意力权重进行特征信息聚合</li>
+</ul>
+<script type="math/tex; mode=display">
+I(u)=N(u)\cup\{u\}</script><p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005410401.png" alt="image-20221018005410401" style="zoom:50%;"></p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005444912.png" alt="image-20221018005444912" style="zoom:50%;"></p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005217562.png" alt="image-20221018005217562" style="zoom: 50%;"></p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005251528.png" alt="image-20221018005251528" style="zoom:50%;"></p>
+<ul>
+<li>更新$z_v$</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005531417.png" alt="image-20221018005531417" style="zoom:50%;"></p>
+<ul>
+<li>user-item二分图卷积算法流程：</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018005556064.png" alt="image-20221018005556064" style="zoom:50%;"></p>
+<p>通过不断卷积迭代，得到的节点表示综合了节点本身和所有连接到它们的节点信息</p>
+<p><strong>任务2：评分预测</strong></p>
+<ul>
+<li>将$z_u$和$z_v$拼接，接入一个线性层进行评分预测</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018010758593.png" alt="image-20221018010758593" style="zoom:50%;"></p>
+<h3 id="NRF-based-Fraudster-Detection-Component"><a href="#NRF-based-Fraudster-Detection-Component" class="headerlink" title="NRF-based Fraudster Detection Component"></a>NRF-based Fraudster Detection Component</h3><p>欺诈者检测模块是一个有监督分类器：随机森林不可微，因此使用神经随机森林，</p>
+<ul>
+<li>将数据评分的误差作为特征引入欺诈者检测模块</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011112165.png" alt="image-20221018011112165" style="zoom:50%;"></p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011140145.png" alt="image-20221018011140145" style="zoom:50%;"></p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018011207083.png" alt="image-20221018011207083" style="zoom:50%;"></p>
+<p>$z_u^*$是user的稠密表示，是神经随机树的输入</p>
+<p>每个决策节点对应一个权重向量w，和输入特征算内积过sigmoid得到走左子树的概率，右子树概率即为用1去减，根据概率大小（大于0.5走左子树）可以确定每个样本的决策路径，而叶子结点根据最终落进去的样本频数可以得到$y=1，0$的概率分布$\pi$, 通过样本连乘积得到一个batch的联合概率分布</p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018013527840.png" alt="image-20221018013527840" style="zoom:50%;"></p>
+<h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p>两个模块损失联合训练</p>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018014052533.png" alt="image-20221018014052533" style="zoom:50%;"></p>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a><strong>数据集</strong></h4><ul>
+<li><p><strong>yelp数据集</strong>：使用前人标记的虚假评论区分虚假用户</p>
+</li>
+<li><p><strong>amazon数据集</strong>：选择收到评论点赞或反对总票数大于20的用户，如果点赞数比例大于0.7标记为正常用户，比例低于0.3标记为欺诈者</p>
+</li>
+</ul>
+<h4 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h4><ul>
+<li><strong>评分任务：</strong>mse、mae，同时为测试集注入不同比例的欺诈者，测试模型的性能波动</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018020904856.png" alt="image-20221018020904856"></p>
+<ul>
+<li><strong>虚假用户检测：</strong>查准率、查全率、f1</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018020958467.png" alt="image-20221018020958467"></p>
+<ul>
+<li><strong>鲁棒性：</strong>利用欺诈者数据模拟不同攻击模式进行模型测试</li>
+</ul>
+<p><img src="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/image-20221018021110587.png" alt="image-20221018021110587"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/" data-id="clttvdi4g001jrcwr9nut4h4n" data-title="虚假用户检测工作相关论文" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/10/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/%E5%A4%96%E8%AE%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          外设
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/10/%E7%A7%91%E7%A0%94/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">测验1解析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/16/algorithm/kmp/">kmp</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/10/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/%E5%A4%96%E8%AE%BE/">外设</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/">虚假用户检测工作相关论文</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/10/%E7%A7%91%E7%A0%94/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">测验1解析</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/10/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/allbumentation/">Albumentation文档</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Cheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
