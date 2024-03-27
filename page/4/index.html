@@ -81,6 +81,143 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-开发相关/linux操作系统笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/25/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-03-25T02:18:29.000Z" itemprop="datePublished">2021-03-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/25/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/">linux操作系统笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+         <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">waitpid(pid,statu, )   <span class="comment">//指定某一个进程进行回收</span></span><br></pre></td></tr></table></figure>
+<h2 id="进程间的通信方式"><a href="#进程间的通信方式" class="headerlink" title="进程间的通信方式"></a>进程间的通信方式</h2><h3 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h3><ol>
+<li>有影响新进程的产生</li>
+<li>保存了很多进程中的信息</li>
+</ol>
+<h3 id="weit3"><a href="#weit3" class="headerlink" title="weit3()"></a>weit3()</h3><h3 id="库函数system"><a href="#库函数system" class="headerlink" title="库函数system()"></a>库函数system()</h3><p>c语言中实现调用shell<br>system()<br>原理：</p>
+<ol>
+<li>fork产生一个子进程</li>
+<li>exce执行相关shell命令 </li>
+<li>子进程用exit推出子进程</li>
+<li>。。。。。。</li>
+</ol>
+<h2 id="进程的通信"><a href="#进程的通信" class="headerlink" title="进程的通信"></a>进程的通信</h2><ul>
+<li>软中断</li>
+<li>管道（使用最简单）</li>
+<li>信号量（开销小）</li>
+<li>共享映射区（无血缘关系）</li>
+<li>socket（最稳定）</li>
+</ul>
+<h3 id="1-管道通信"><a href="#1-管道通信" class="headerlink" title="1.管道通信"></a>1.管道通信</h3><ol>
+<li>本质是一个伪文件（不占用磁盘空间）</li>
+<li>有读端和写端</li>
+<li>结构为一个环形队列</li>
+<li>pipe()为系统调用<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> p[<span class="number">2</span>]</span><br><span class="line">status = pipe(p)</span><br><span class="line"><span class="comment">//p[0]用于从管道写，p[1]用于从管道读</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>特点：<ul>
+<li>管道默认是阻塞的</li>
+<li>管道适用于与血缘关系的进程</li>
+</ul>
+</li>
+</ul>
+<h3 id="信号量-pv操作"><a href="#信号量-pv操作" class="headerlink" title="信号量(pv操作)"></a>信号量(pv操作)</h3><h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><h3 id="共享内存（能实现大量数据传输，解决了消息队列的弱点）"><a href="#共享内存（能实现大量数据传输，解决了消息队列的弱点）" class="headerlink" title="共享内存（能实现大量数据传输，解决了消息队列的弱点）"></a>共享内存（能实现大量数据传输，解决了消息队列的弱点）</h3><ol>
+<li>基本流程<ol>
+<li>获取物理内存</li>
+<li>映射到虚拟地址空间</li>
+<li>使用后释放 </li>
+</ol>
+</li>
+<li>ipcs 命令<ol>
+<li>ipcs -m 查看系统中存在的共享内存</li>
+<li>ipcrm shm <shmid> 杀掉共享内存</shmid></li>
+</ol>
+</li>
+</ol>
+<h3 id="文件映射-mmap（文件映射到虚拟空间中）"><a href="#文件映射-mmap（文件映射到虚拟空间中）" class="headerlink" title="文件映射 mmap（文件映射到虚拟空间中）"></a>文件映射 mmap（文件映射到虚拟空间中）</h3><ol>
+<li>特点<ol>
+<li>普通读文件先从硬盘到内核缓存，再到物理内存共进行了两次拷贝</li>
+<li>mmap操作直接从硬盘拷贝到物理内存，只进行了一次拷贝</li>
+</ol>
+</li>
+<li>常见错误 <ol>
+<li>len = 20 ，filelength = 0 ：产生BusError总线错误</li>
+<li>文件只有只读权限，映射内存也为只读权限：产生段错误，无写权限</li>
+<li>文件和映射内存都只有只写权限：产生读错误</li>
+<li>offset 9</li>
+<li>越界：</li>
+</ol>
+</li>
+</ol>
+<h2 id="信号（常见信号为1到31）"><a href="#信号（常见信号为1到31）" class="headerlink" title="信号（常见信号为1到31）"></a>信号（常见信号为1到31）</h2><h3 id="信号的产生"><a href="#信号的产生" class="headerlink" title="信号的产生"></a>信号的产生</h3><ol>
+<li>按键产生：<ul>
+<li>ctrl+c  2号  </li>
+<li>ctrl+z  1号</li>
+<li>ctrl+\  3号</li>
+</ul>
+</li>
+<li>kill(pid_t pid , int sig);</li>
+<li>sigprocmask 函数 ：屏蔽信号，接触屏蔽</li>
+</ol>
+<h3 id="信号捕捉特性"><a href="#信号捕捉特性" class="headerlink" title="信号捕捉特性"></a>信号捕捉特性</h3><ol>
+<li>信号执行期间，信号屏蔽字有mask -&gt; s_mask     </li>
+<li>某信号执行期间，某信号自动被屏蔽</li>
+<li>阻塞信号不支持排队</li>
+</ol>
+<h3 id="SIGCHLD信号"><a href="#SIGCHLD信号" class="headerlink" title="SIGCHLD信号"></a>SIGCHLD信号</h3><ol>
+<li>条件<ul>
+<li>子进程终止</li>
+<li>子进程接收到SIGSTOP信号</li>
+<li>子进程接收到continue信号 </li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h2 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h2><ol>
+<li>特点：<ul>
+<li>独立于控制终端</li>
+<li>周期性执行某任务</li>
+<li>不受用户登陆注销影响</li>
+<li>一般采用以d结尾的名字</li>
+</ul>
+</li>
+<li>进程组<br> * </li>
+<li>会话<br> * </li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/25/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/" data-id="clttvdi48000orcwr62yxfuid" data-title="linux操作系统笔记" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-日常/笑话" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/24/%E6%97%A5%E5%B8%B8/%E7%AC%91%E8%AF%9D/" class="article-date">
@@ -277,6 +414,10 @@
       <ul>
         
           <li>
+            <a href="/2024/03/27/algorithm/%E5%8C%BA%E9%97%B4%E6%B1%87%E6%80%BB/">汇总区间</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/16/algorithm/kmp/">kmp</a>
           </li>
         
@@ -290,10 +431,6 @@
         
           <li>
             <a href="/2023/11/10/%E7%A7%91%E7%A0%94/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">测验1解析</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/10/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/allbumentation/">Albumentation文档</a>
           </li>
         
       </ul>
