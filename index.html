@@ -81,6 +81,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-algorithm/排序-快排" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/07/algorithm/%E6%8E%92%E5%BA%8F-%E5%BF%AB%E6%8E%92/" class="article-date">
+  <time class="dt-published" datetime="2024-08-07T11:00:58.000Z" itemprop="datePublished">2024-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/08/07/algorithm/%E6%8E%92%E5%BA%8F-%E5%BF%AB%E6%8E%92/">排序算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p>
+<h1 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h1><p>递归</p>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>在待排序数组中找到一个元素作为标准元素t，在数组中将所有小于t的元素放在t左侧，所有大于t的元素放在t的右侧（从小到大排序，否则反过来）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">qs</span>(<span class="params">l,r,nums</span>):</span></span><br><span class="line">    <span class="keyword">if</span> l&lt;r:</span><br><span class="line">        i = l</span><br><span class="line">        j = r</span><br><span class="line">        key = nums[l]</span><br><span class="line">        <span class="keyword">while</span> i&lt;j:</span><br><span class="line">            <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> nums[j]&gt;=key:</span><br><span class="line">                j-=<span class="number">1</span></span><br><span class="line">            nums[i]=nums[j]</span><br><span class="line">            <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> nums[i]&lt;=key:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">            nums[j]= nums[i]</span><br><span class="line">        nums[i] = key</span><br><span class="line">        qs(l,i-<span class="number">1</span>,nums)</span><br><span class="line">        qs(i+<span class="number">1</span>,r,nums)</span><br></pre></td></tr></table></figure></p>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span>(<span class="params">arr</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    归并排序</span></span><br><span class="line"><span class="string">    原理：</span></span><br><span class="line"><span class="string">    1. 将数组分为两部分，分别对两部分进行排序</span></span><br><span class="line"><span class="string">    2. 将两个有序数组合并</span></span><br><span class="line"><span class="string">    3. 递归</span></span><br><span class="line"><span class="string">    时间复杂度：O(nlogn)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(arr)&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line">    mid = <span class="built_in">len</span>(arr)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(arr[:mid])</span><br><span class="line">    right = merge_sort(arr[mid:])</span><br><span class="line">    <span class="keyword">return</span> merge(left,right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">left,right</span>):</span></span><br><span class="line">    <span class="comment"># 合并两个有序数组</span></span><br><span class="line">    res = []</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i&lt;<span class="built_in">len</span>(left) <span class="keyword">and</span> j&lt;<span class="built_in">len</span>(right):</span><br><span class="line">        <span class="keyword">if</span> left[i]&lt;right[j]:</span><br><span class="line">            res.append(left[i])</span><br><span class="line">            i+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res.append(right[j])</span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">    res+=left[i:]</span><br><span class="line">    res+=right[j:]</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">arr=[<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(merge_sort(arr))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/07/algorithm/%E6%8E%92%E5%BA%8F-%E5%BF%AB%E6%8E%92/" data-id="clttvdi3x0003rcwrdw5i7cq1" data-title="排序算法" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-algorithm/区间汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/27/algorithm/%E5%8C%BA%E9%97%B4%E6%B1%87%E6%80%BB/" class="article-date">
@@ -1425,79 +1471,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
 
 
   
-    <article id="post-开发相关/windows常见问题汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/20/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
-  <time class="dt-published" datetime="2023-03-20T11:03:19.000Z" itemprop="datePublished">2023-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/20/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">windows常见问题汇总</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿"><a href="#打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿" class="headerlink" title="打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿"></a>打开windows的蓝牙界面，出现超级多的“奇异果”设备，导致加载缓慢甚至卡顿</h2><p>以管理员身份运行PowerShell，并执行以下下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-PnpDevice | Where-Object &#123;$_.FriendlyName -like &quot;*客厅的奇异果*&quot;&#125;|ForEach-Object&#123;pnputil.exe /remove-device $_.InstanceId &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24269643/article/details/107221434">https://blog.csdn.net/qq_24269643/article/details/107221434</a></p>
-<h2 id="windows10-重启后图标顺序打乱"><a href="#windows10-重启后图标顺序打乱" class="headerlink" title="windows10 重启后图标顺序打乱"></a>windows10 重启后图标顺序打乱</h2><ol>
-<li>打开运行，输入命令Gpedit.msc，点击确定。</li>
-<li>在本地策略组编辑器中打开用户配置/管理模板/桌面。</li>
-<li>在右侧找到退出时不保存设置，双击打开。</li>
-<li>在新窗口中选择已禁用，点击确定。</li>
-</ol>
-<h2 id="设置程序开机自启"><a href="#设置程序开机自启" class="headerlink" title="设置程序开机自启"></a>设置程序开机自启</h2><ul>
-<li>将应用程序或快捷方式复制到<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code>即可</li>
-</ul>
-<h2 id="绿联拓展坞连接显示器唤醒异常"><a href="#绿联拓展坞连接显示器唤醒异常" class="headerlink" title="绿联拓展坞连接显示器唤醒异常"></a>绿联拓展坞连接显示器唤醒异常</h2><ol>
-<li>笔记本型号为yoga14s锐龙5800h版本，使用绿联5合1拓展坞(型号CM418)，通过hdmi接口连接外置显示器(LG 27UL550w)</li>
-<li>相关设置如下：<ul>
-<li>电源和睡眠 设置为30分钟不操作关闭屏幕、从不睡眠；</li>
-<li>设备管理器/通用串行总线控制器/属性/电源管理 已关闭全部”允许计算机关闭此设备以节约电源”</li>
-<li>高级电源设置/usb选择性暂停设置已禁用；</li>
-</ul>
-</li>
-<li>问题：<ul>
-<li>电脑屏幕自动关闭后等待一段时间唤醒电脑屏幕，外接屏幕无信号响应但是笔记本可检测到显示器，拓展坞连接的其他外设工作正常；此时重新插拔拓展坞或者重启电脑，外接显示器才可恢复正常；</li>
-<li>如果电脑屏幕自动关闭后一小段时间内唤醒屏幕，外接屏幕正常唤醒；</li>
-<li>使用typec转hdmi转换器直接连接显示器没有上述问题</li>
-</ul>
-</li>
-<li>解决：<ul>
-<li>暂无解决方案，大概率为拓展坞问题；</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/20/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="clttvdi4c0011rcwr9lzw9m17" data-title="windows常见问题汇总" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1542,7 +1515,7 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
     </div>
   </div>
 
@@ -1553,6 +1526,10 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/08/07/algorithm/%E6%8E%92%E5%BA%8F-%E5%BF%AB%E6%8E%92/">排序算法</a>
+          </li>
         
           <li>
             <a href="/2024/03/27/algorithm/%E5%8C%BA%E9%97%B4%E6%B1%87%E6%80%BB/">汇总区间</a>
@@ -1568,10 +1545,6 @@ min_{w}||Xw-y||_{2}^{2}+\alpha||w||_{2}^{2}</script><ul>
         
           <li>
             <a href="/2023/11/10/%E7%A7%91%E7%A0%94/paperReading/">虚假用户检测工作相关论文</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/10/%E7%A7%91%E7%A0%94/%E6%B5%8B%E9%AA%8C1%E8%A7%A3%E6%9E%90/">测验1解析</a>
           </li>
         
       </ul>
